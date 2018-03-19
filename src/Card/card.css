@@ -1,0 +1,17 @@
+.card {
+  border: 1px solid black;
+  width: 300px;
+}
+
+.card ul {
+  padding-left: 0;
+}
+
+.card li {
+  list-style: none;
+}
+
+.card h2 {
+  display: inline-block;
+
+}
