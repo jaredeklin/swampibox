@@ -1,15 +1,17 @@
 .opening-container {
+/*  grid-row: 1 / 4;
+  grid-column: 1;*/
   height: 100vh;
-  float: left;
+  /*float: left;*/
   overflow: hidden;
-  background-color: grey;
+  display: none;
 }
 
 .opening-crawl {
   display: block;
   color: yellow;
   position: relative;
-  top: 250px;
+  top: 50px;
   width: 400px;
   height: 100%;
   margin: 0 auto;

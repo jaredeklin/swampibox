@@ -4,7 +4,7 @@ import { Card } from '../Card/Card'
 export const CardContainer = () => {
 
   return ( 
-    <div> Card container what
+    <div className="card-container">
       <Card />
     </div>
     )

@@ -1,7 +1,8 @@
 import React from 'react';
+import './button.css'
 
-export const Button = () => {
+export const Button = ({category}) => {
   return (
-    <button>I am a button. hey oh!!!</button>
+    <button className="category-button">{category}</button>
   )
 }
