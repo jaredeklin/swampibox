@@ -1,0 +1,32 @@
+.opening-container {
+/*  grid-row: 1 / 4;
+  grid-column: 1;*/
+  height: 100vh;
+  /*float: left;*/
+  overflow: hidden;
+  display: none;
+}
+
+.opening-crawl {
+  display: block;
+  color: yellow;
+  position: relative;
+  top: 50px;
+  width: 400px;
+  height: 100%;
+  margin: 0 auto;
+  line-height: 50px;
+  text-align: center;
+  transform: translateY(100%);
+  animation: crawl 30s linear infinite;
+}
+
+@keyframes crawl {
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateY(-100%);
+  }
+}
