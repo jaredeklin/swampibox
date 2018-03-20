@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import { CardContainer } from '../CardContainer/CardContainer';
 import { getFilmData } from '../cleanData';
+import { Opening } from '../Opening/Opening';
+import { ButtonContainer } from '../ButtonContainer/ButtonContainer'
 
 class App extends Component {
   constructor() {
@@ -22,7 +24,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    // this.getData();
+    this.getData();
   }
 
   render() {
@@ -31,6 +33,8 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">SWAMPIbox</h1>
         </header>
+        <Opening filmData={this.state.filmData} />
+        <ButtonContainer />
         <CardContainer />
         
       </div>
