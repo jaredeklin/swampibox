@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { CardContainer } from '../CardContainer/CardContainer';
-import { fetchFilmData, cleanFilmData, fetchPeopleData } from '../apiHelper';
+import { fetchFilmData, cleanFilmData, fetchPeopleData , fetchVehicleData, fetchPlanetData } from '../apiHelper';
 import { Opening } from '../Opening/Opening';
 import { ButtonContainer } from '../ButtonContainer/ButtonContainer'
 
@@ -11,34 +11,38 @@ class App extends Component {
     this.state = {
       filmData: [],
       favorites: [],
-      peopleData: []
+      peopleData: [],
+      vehicleData: [],
+      planetData: []
     }
   }
-
-  // getData = () => {
-  //   // fetchFilmData()
-  //   fetchPeopleData()
-  //     .then(response => response.json())
-  //     .then(data => this.setState({
-  //       // filmData: cleanFilmData(data),
-  //       peopleData: cleanPeopleData(data)
-  //     }))
-  //     .catch(error => console.log('bad!'));
-
-  // }
-
 
   getData = (type) => {
     if (type === 'People') {
       fetchPeopleData()
         .then(peopleData => this.setState({ peopleData }))
     }
+
+    if (type === 'Vehicles') {
+      fetchVehicleData()
+        .then(vehicleData => this.setState({ vehicleData }))
+    }
+
+    if (type === 'Planets')
+      fetchPlanetData()
+        .then(planetData => this.setState({ planetData }))
+  }
+
+
+  addToFavorites = (event) => {
+    console.log(event.target.closest('div'))
   }
 
 
   componentDidMount() {
     // this.getData();
     // this.fetchPeopleData()
+    
   }
 
   render() {
@@ -53,7 +57,7 @@ class App extends Component {
         <ButtonContainer getData={this.getData} />
         {
           this.state.peopleData.length === 10 &&
-            <CardContainer peopleData={this.state.peopleData} />
+            <CardContainer peopleData={this.state.peopleData} addToFavorites={this.addToFavorites} />
         }
        
         

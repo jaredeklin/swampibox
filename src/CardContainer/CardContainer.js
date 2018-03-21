@@ -1,8 +1,9 @@
 import React from 'react';
 import { Card } from '../Card/Card';
-import './cardContainer.css'
+import './cardContainer.css';
+import PropTypes from 'prop-types'
 
-export const CardContainer = ({peopleData}) => {
+export const CardContainer = ({peopleData, addToFavorites}) => {
   const peopleCards = peopleData.map((person, index) => {
     const { name, pop, species, homeworld } = person;
 
@@ -12,6 +13,7 @@ export const CardContainer = ({peopleData}) => {
               species={species}
               homeworld={homeworld}
               key={index}
+              addToFavorites={addToFavorites}
             />)
   });
 
@@ -20,6 +22,13 @@ export const CardContainer = ({peopleData}) => {
       {peopleCards}
     </div>
   );
+}
+
+CardContainer.propTypes = {
+  name: PropTypes.string,
+  pop: PropTypes.string,
+  species: PropTypes.string,
+  homeworld: PropTypes.string
 }
 
 

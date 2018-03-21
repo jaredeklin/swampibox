@@ -49,3 +49,74 @@ const fetchSpecies = (updatedData) => {
   return Promise.all(promises)
 }
 
+export const fetchPlanetData = () => {
+
+  return fetch("https://swapi.co/api/planets/")
+    .then(response => response.json())
+    .then(planetData => {
+      return planetData.results.reduce((planetArray, planet) => {
+        const planetObj = {
+          name: planet.name,
+          terrain: planet.terrain,
+          pop: planet.population,
+          climate: planet.climate,
+          residents: planet.residents
+        }
+
+      return [...planetArray, planetObj]
+      }, [])
+    })
+    .then(updatedData => getResidents(updatedData))
+}
+
+const getResidents = (planetData) => {
+
+  const promises = planetData.map(planet => {
+
+    const inhabitants = planet.residents.map(resident => {
+
+      return fetch(resident)
+        .then(response => response.json())
+        .then(residentData => residentData.name)
+    })
+    
+    return Promise.all(inhabitants)
+      .then(residentNames => ({...planet, residents: residentNames}))
+  })
+
+  return Promise.all(promises)
+}
+
+export const fetchVehicleData = () => {
+  return fetch('https://swapi.co/api/vehicles/')
+    .then(response => response.json())
+    .then(vehicleData => cleanVehicleData(vehicleData))
+}
+
+const cleanVehicleData = (vehicleData) => {
+  return vehicleData.results.reduce((vehicleArray, vehicle) => {
+    const vehicleObj = {
+      name: vehicle.name,
+      model: vehicle.model,
+      class: vehicle.vehicle_class,
+      capacity: vehicle.passengers
+
+    }
+    return [...vehicleArray, vehicleObj]
+  }, [])
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

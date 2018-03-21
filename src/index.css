@@ -7,3 +7,8 @@ body {
   background-image: url('./App/star-background.jpg');
   color: white;
 }
+
+button {
+  outline: none;
+  border: none;
+}
