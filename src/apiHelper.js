@@ -1,5 +1,5 @@
 export const fetchFilmData = () => {
-  
+
   return fetch('https://swapi.co/api/films/')
 }
 
@@ -15,7 +15,15 @@ export const cleanFilmData = (films) => {
   }, [])  
 }
 
-export const fetchPlanet = (peopleData) => {
+export const fetchPeopleData = () => {
+    return fetch('https://swapi.co/api/people/')
+      .then(response => response.json())
+      .then(peoplesData => fetchPlanet(peoplesData.results))
+      .then(updatedData => fetchSpecies(updatedData))
+      
+    }
+
+const fetchPlanet = (peopleData) => {
     const promises = peopleData.map(character => {
 
       return fetch(character.homeworld)
@@ -30,7 +38,7 @@ export const fetchPlanet = (peopleData) => {
   return Promise.all(promises)
 }
 
-export const fetchSpecies = (updatedData) => {
+const fetchSpecies = (updatedData) => {
   const promises = updatedData.map((character) => {
 
     return fetch(character.species)

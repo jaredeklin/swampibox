@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { CardContainer } from '../CardContainer/CardContainer';
-import { fetchFilmData, cleanFilmData, fetchPlanet, fetchSpecies } from '../apiHelper';
+import { fetchFilmData, cleanFilmData, fetchPeopleData } from '../apiHelper';
 import { Opening } from '../Opening/Opening';
 import { ButtonContainer } from '../ButtonContainer/ButtonContainer'
 
@@ -26,19 +26,19 @@ class App extends Component {
   //     .catch(error => console.log('bad!'));
 
   // }
-  fetchPeopleData = () => {
-    return fetch('https://swapi.co/api/people/')
-      .then(response => response.json())
-      .then(peoplesData => fetchPlanet(peoplesData.results))
-      .then(updatedData => fetchSpecies(updatedData))
-      .then(peopleData => this.setState({ peopleData }))
-    }
 
+
+  getData = (type) => {
+    if (type === 'People') {
+      fetchPeopleData()
+        .then(peopleData => this.setState({ peopleData }))
+    }
+  }
 
 
   componentDidMount() {
     // this.getData();
-    this.fetchPeopleData()
+    // this.fetchPeopleData()
   }
 
   render() {
@@ -50,10 +50,10 @@ class App extends Component {
           <button className="view-favorites-btn">favorites {this.state.favorites.length}</button>
         </header>
         
-        <ButtonContainer />
+        <ButtonContainer getData={this.getData} />
         {
           this.state.peopleData.length === 10 &&
-            <CardContainer peopleData={this.state.peopleData}/>
+            <CardContainer peopleData={this.state.peopleData} />
         }
        
         

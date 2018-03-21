@@ -1,8 +1,5 @@
 .opening-container {
-/*  grid-row: 1 / 4;
-  grid-column: 1;*/
   height: 100vh;
-  /*float: left;*/
   overflow: hidden;
   display: none;
 }

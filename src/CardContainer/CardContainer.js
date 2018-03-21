@@ -3,7 +3,7 @@ import { Card } from '../Card/Card';
 import './cardContainer.css'
 
 export const CardContainer = ({peopleData}) => {
-  const peopleCards = peopleData.map(person => {
+  const peopleCards = peopleData.map((person, index) => {
     const { name, pop, species, homeworld } = person;
 
     return  (<Card 
@@ -11,6 +11,7 @@ export const CardContainer = ({peopleData}) => {
               pop={pop}
               species={species}
               homeworld={homeworld}
+              key={index}
             />)
   });
 
