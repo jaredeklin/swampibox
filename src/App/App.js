@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { CardContainer } from '../CardContainer/CardContainer';
-import { getFilmData } from '../apiHelper';
+import { fetchFilmData, cleanFilmData, fetchPlanet, fetchSpecies } from '../apiHelper';
 import { Opening } from '../Opening/Opening';
 import { ButtonContainer } from '../ButtonContainer/ButtonContainer'
 
@@ -10,22 +10,35 @@ class App extends Component {
     super()
     this.state = {
       filmData: [],
-      favorites: []
+      favorites: [],
+      peopleData: []
     }
   }
 
-  getData = () => {
-    fetch('https://swapi.co/api/films/')
-      .then(data => data.json())
-      .then(data => this.setState({
-        filmData: getFilmData(data)
-      }))
-      .catch(error => console.log('bad!'));
+  // getData = () => {
+  //   // fetchFilmData()
+  //   fetchPeopleData()
+  //     .then(response => response.json())
+  //     .then(data => this.setState({
+  //       // filmData: cleanFilmData(data),
+  //       peopleData: cleanPeopleData(data)
+  //     }))
+  //     .catch(error => console.log('bad!'));
 
-  }
+  // }
+  fetchPeopleData = () => {
+    return fetch('https://swapi.co/api/people/')
+      .then(response => response.json())
+      .then(peoplesData => fetchPlanet(peoplesData.results))
+      .then(updatedData => fetchSpecies(updatedData))
+      .then(peopleData => this.setState({ peopleData }))
+    }
+
+
 
   componentDidMount() {
-    this.getData();
+    // this.getData();
+    this.fetchPeopleData()
   }
 
   render() {
@@ -38,7 +51,11 @@ class App extends Component {
         </header>
         
         <ButtonContainer />
-        <CardContainer />
+        {
+          this.state.peopleData.length === 10 &&
+            <CardContainer peopleData={this.state.peopleData}/>
+        }
+       
         
       </div>
     );

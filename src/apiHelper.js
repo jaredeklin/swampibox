@@ -1,4 +1,9 @@
-export const getFilmData = (films) => {
+export const fetchFilmData = () => {
+  
+  return fetch('https://swapi.co/api/films/')
+}
+
+export const cleanFilmData = (films) => {
   return films.results.reduce((filmData, episode) => {
     const filmObj = {
       title: episode.title,
@@ -9,3 +14,30 @@ export const getFilmData = (films) => {
     return [...filmData, filmObj]
   }, [])  
 }
+
+export const fetchPlanet = (peopleData) => {
+    const promises = peopleData.map(character => {
+
+      return fetch(character.homeworld)
+        .then(response => response.json())
+        .then(homeWorldData => ({
+          name: character.name,
+          species: character.species, 
+          homeworld: homeWorldData.name, 
+          pop: homeWorldData.population
+        }))
+    })
+  return Promise.all(promises)
+}
+
+export const fetchSpecies = (updatedData) => {
+  const promises = updatedData.map((character) => {
+
+    return fetch(character.species)
+     .then(response => response.json())
+     .then(speciesData => ({...character, species: speciesData.name}))
+  })
+
+  return Promise.all(promises)
+}
+

@@ -1,16 +1,16 @@
 import React from 'react';
 import './card.css'
 
-export const Card = () => {
+export const Card = ({ name, pop, species, homeworld }) => {
+  
   return (
     <div className='card'>
-      <h2>Name here</h2>
+      <h2>{name}</h2>
       <button>Favorite</button>
       <ul>
-        <li>Homeworld</li>
-        <li>Species</li>
-        <li>Language</li>
-        <li>Population</li>
+        <li>Homeworld: {homeworld}</li>
+        <li>Species: {species}</li>
+        <li>Population: {pop}</li>
       </ul>
     </div>
   )
