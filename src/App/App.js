@@ -13,11 +13,13 @@ class App extends Component {
       favorites: [],
       peopleData: [],
       vehicleData: [],
-      planetData: []
+      planetData: [],
+      active: []
     }
   }
 
   getData = (type) => {
+    this.addToActive(type)
     if (type === 'People') {
       fetchPeopleData()
         .then(peopleData => this.setState({ peopleData }))
@@ -31,6 +33,16 @@ class App extends Component {
     if (type === 'Planets')
       fetchPlanetData()
         .then(planetData => this.setState({ planetData }))
+  }
+
+  addToActive = (type) => {
+    const activeCard = [...this.state.active]
+    if (activeCard.length >= 1 && activeCard[0] !== type) {
+      activeCard.splice(0, 1, type)
+    } else if (activeCard[0] !== type){
+      activeCard.push(type)
+    }
+    this.setState({ active: activeCard})
   }
 
 
@@ -54,7 +66,7 @@ class App extends Component {
           <button className="view-favorites-btn">favorites {this.state.favorites.length}</button>
         </header>
         
-        <ButtonContainer getData={this.getData} />
+        <ButtonContainer getData={this.getData} active={this.state.active}/>
         
             <CardContainer 
               peopleData={this.state.peopleData}

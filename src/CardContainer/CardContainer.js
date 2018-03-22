@@ -4,7 +4,7 @@ import './cardContainer.css';
 import PropTypes from 'prop-types'
 
 export const CardContainer = ({allData, peopleData, addToFavorites, vehicleData, planetData}) => {
-  console.log(allData)
+
   const peopleCards = peopleData.map((person, index) => {
     
     return  (<Card 

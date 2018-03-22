@@ -6,20 +6,15 @@ class Button extends Component {
 
   handleClick = (event) => {
     this.props.getData(event.target.value)
-    if(event.target.className === "category-button") {
-      event.target.className = "category-button active"
-    } else {
-      event.target.className = "category-button"
-    }
   }
 
   render() {
     return (
       <button 
-        className="category-button"
+        className={this.props.className}
         onClick={this.handleClick}
         value={this.props.category}
-        >{this.props.category}</button>
+      >{this.props.category}</button>
     )
   }
 }
