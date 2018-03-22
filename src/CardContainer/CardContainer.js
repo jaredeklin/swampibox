@@ -3,15 +3,12 @@ import { Card } from '../Card/Card';
 import './cardContainer.css';
 import PropTypes from 'prop-types'
 
-export const CardContainer = ({peopleData, addToFavorites}) => {
+export const CardContainer = ({allData, peopleData, addToFavorites, vehicleData, planetData}) => {
+  console.log(allData)
   const peopleCards = peopleData.map((person, index) => {
-    const { name, pop, species, homeworld } = person;
-
+    
     return  (<Card 
-              name={name}
-              pop={pop}
-              species={species}
-              homeworld={homeworld}
+              props={person}
               key={index}
               addToFavorites={addToFavorites}
             />)

@@ -35,7 +35,7 @@ class App extends Component {
 
 
   addToFavorites = (event) => {
-    console.log(event.target.closest('div'))
+    // console.log(name, pop, species, homeworld)
   }
 
 
@@ -55,10 +55,15 @@ class App extends Component {
         </header>
         
         <ButtonContainer getData={this.getData} />
-        {
-          this.state.peopleData.length === 10 &&
-            <CardContainer peopleData={this.state.peopleData} addToFavorites={this.addToFavorites} />
-        }
+        
+            <CardContainer 
+              peopleData={this.state.peopleData}
+              planetData={this.state.planetData}
+              vehicleData={this.state.vehicleData} 
+              addToFavorites={this.addToFavorites} 
+              allData={this.state}
+            />
+        
        
         
       </div>

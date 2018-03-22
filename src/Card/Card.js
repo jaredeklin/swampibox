@@ -1,25 +1,21 @@
 import React from 'react';
 import './card.css';
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 
-export const Card = ({ name, pop, species, homeworld, addToFavorites }) => {
-  
+export const Card = (props) => {
+
+  const displayCards = Object.keys(props.props).filter(property => property !== "name").map(info => {
+    return (<li>{info}: {props.props[info]} </li>)
+  })
+
   return (
     <div className='card'>
-      <h2>{name}</h2>
-      <button onClick={addToFavorites}>Favorite</button>
+      <h2>{props.props.name}</h2>
+      <button onClick={props.addToFavorites}>Favorite</button>
       <ul>
-        <li>Homeworld: {homeworld}</li>
-        <li>Species: {species}</li>
-        <li>Population: {pop}</li>
+        {displayCards}
       </ul>
     </div>
   )
 }
 
-Card.propTypes = {
-  name: PropTypes.string,
-  pop: PropTypes.string,
-  species: PropTypes.string,
-  homeworld: PropTypes.string
-}
