@@ -52,8 +52,6 @@ class App extends Component {
 
 
   componentDidMount() {
-    // this.getData();
-    // this.fetchPeopleData()
     
   }
 
@@ -67,16 +65,14 @@ class App extends Component {
         </header>
         
         <ButtonContainer getData={this.getData} active={this.state.active}/>
-        
+        { 
+          this.state.active.length === 1 &&
             <CardContainer 
-              peopleData={this.state.peopleData}
-              planetData={this.state.planetData}
-              vehicleData={this.state.vehicleData} 
               addToFavorites={this.addToFavorites} 
               allData={this.state}
-            />
-        
-       
+              active={this.state.active}
+            /> 
+        }
         
       </div>
     );

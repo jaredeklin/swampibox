@@ -3,9 +3,27 @@ import { Card } from '../Card/Card';
 import './cardContainer.css';
 import PropTypes from 'prop-types'
 
-export const CardContainer = ({allData, peopleData, addToFavorites, vehicleData, planetData}) => {
+export const CardContainer = ({ allData, active, addToFavorites }) => {
 
-  const peopleCards = peopleData.map((person, index) => {
+  let cardsToRender;
+
+  switch (active[0]) {
+    case 'People':
+    cardsToRender = allData.peopleData
+      break;
+
+    case 'Planets':
+    cardsToRender = allData.planetData
+      break;
+
+    case 'Vehicles':
+    cardsToRender = allData.vehicleData
+      break;
+
+    default:
+  }
+
+  const cards = cardsToRender.map((person, index) => {
     
     return  (<Card 
               props={person}
@@ -16,7 +34,7 @@ export const CardContainer = ({allData, peopleData, addToFavorites, vehicleData,
 
   return ( 
     <div className="card-container">
-      {peopleCards}
+      {cards}
     </div>
   );
 }
