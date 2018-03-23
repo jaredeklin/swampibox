@@ -6,6 +6,19 @@ import { shallow } from 'enzyme';
 describe('App', ()=> {
   let wrapper;
   const expectedActive = ['Vehicles'];
+  const expectedFavorites = [{
+    capacity: "1",
+    class: "repulsorcraft",
+    model: "X-34 landspeeder",
+    name: "X-34 landspeeder"
+  }];
+
+  const card = {
+    capacity: "1",
+    class: "repulsorcraft",
+    model: "X-34 landspeeder",
+    name: "X-34 landspeeder"
+  }
 
   beforeEach(() => {
     wrapper = shallow(<App />)
@@ -38,6 +51,18 @@ describe('App', ()=> {
     wrapper.instance().addToActive('Vehicles');
     expect(wrapper.state('active')).toEqual(expectedActive);
   });
+
+  it('should add a card to favorites in state', () => {
+    wrapper.instance().addToFavorites(card);
+    expect(wrapper.state('favorites')).toEqual(expectedFavorites);
+  });
+
+  it('should remove favorite card from state if already selected', () => {
+    wrapper.instance().addToFavorites(card);
+    expect(wrapper.state('favorites')).toEqual(expectedFavorites);
+    wrapper.instance().addToFavorites(card);
+    expect(wrapper.state('favorites')).toEqual([]);
+  })
 });
 
 
