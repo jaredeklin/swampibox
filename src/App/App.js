@@ -42,12 +42,28 @@ class App extends Component {
     } else if (activeCard[0] !== type){
       activeCard.push(type)
     }
-    this.setState({ active: activeCard})
+    this.setState({ active: activeCard })
   }
 
 
-  addToFavorites = (event) => {
-    // console.log(name, pop, species, homeworld)
+  addToFavorites = (cardProps, event) => {
+
+    var updateFavorite = [...this.state.favorites];
+
+    if( updateFavorite.length === 0 ) {
+      updateFavorite.push(cardProps)
+    } else {
+      const match = updateFavorite.find(card => card.name === cardProps.name)
+
+      if(match) {
+        updateFavorite = updateFavorite.filter(card => card.name !== cardProps.name)
+      } else {
+        updateFavorite.push(cardProps);
+      }
+    }
+
+    this.setState({ favorites: updateFavorite})
+
   }
 
 

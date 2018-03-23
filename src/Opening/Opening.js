@@ -7,10 +7,10 @@ export const Opening = ({filmData}) => {
     var randomNum = Math.floor(Math.random() * (filmData.length));
   }
 
-  setTimeout(() => {
-    console.log('timeout')
+  // setTimeout(() => {
+  //   console.log('timeout')
 
-  }, 10000)
+  // }, 10000)
 
   return (
     <div className='opening-container'>

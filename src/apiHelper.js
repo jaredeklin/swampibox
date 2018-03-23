@@ -69,6 +69,10 @@ export const fetchPlanetData = () => {
     .then(updatedData => getResidents(updatedData))
 }
 
+// const getName (names) => {
+//   //turn residentNames from array to string
+// }
+
 const getResidents = (planetData) => {
 
   const promises = planetData.map(planet => {
