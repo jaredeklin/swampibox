@@ -5,10 +5,11 @@ import { shallow } from 'enzyme';
 
 describe('App', ()=> {
   let wrapper;
+  const expectedActive = ['Vehicles'];
 
   beforeEach(() => {
-    wrapper = shallow(<App />);
-  });
+    wrapper = shallow(<App />)
+  })
 
   it('should match the snapshot', () => {
     expect(wrapper).toMatchSnapshot();
@@ -24,6 +25,20 @@ describe('App', ()=> {
       active: []
     }
 
-    expect(wrapper.state()).toEqual(expectedState)
+    expect(wrapper.state()).toEqual(expectedState);
+  });
+
+  it('should add an active card to state', () => {
+    wrapper.instance().addToActive('Vehicles');
+    expect(wrapper.state('active')).toEqual(expectedActive);
+  });
+
+  it('should replace an active card in state', () => {
+    wrapper.instance().setState({active: ['People']});
+    wrapper.instance().addToActive('Vehicles');
+    expect(wrapper.state('active')).toEqual(expectedActive);
   });
 });
+
+
+
