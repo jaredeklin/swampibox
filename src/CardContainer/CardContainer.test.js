@@ -19,7 +19,11 @@ describe('CardContainer', () => {
   }
 
   it('should match the snapshot', () => {
-    let wrapper = shallow(<CardContainer allData={mockAllData}/>)
+    let wrapper = shallow(
+      <CardContainer 
+        allData={mockAllData}
+        props={mockAllData}
+      />)
     expect(wrapper).toMatchSnapshot()
   })
 })

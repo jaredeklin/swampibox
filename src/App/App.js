@@ -63,7 +63,6 @@ class App extends Component {
     }
 
     this.setState({ favorites: updateFavorite})
-
   }
 
   componentDidMount() {

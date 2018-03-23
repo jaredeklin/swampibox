@@ -2,22 +2,17 @@ import React, { Component } from 'react';
 import './button.css';
 import PropTypes from 'prop-types';
 
-class Button extends Component {
+export const Button = ({category, getData, className}) => {
 
-  handleClick = (event) => {
-    this.props.getData(event.target.value)
-  }
-
-  render() {
-    return (
-      <button 
-        className={this.props.className}
-        onClick={this.handleClick}
-        value={this.props.category}
-      >{this.props.category}</button>
-    )
-  }
+  return (
+    <button 
+      className={className}
+      onClick={() => getData(category)}
+      value={category}
+    >{category}</button>
+  )
 }
+
 
 Button.propTypes = {
   category: PropTypes.string,

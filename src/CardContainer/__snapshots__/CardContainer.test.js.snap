@@ -24,6 +24,25 @@ ShallowWrapper {
             ],
           }
     }
+    props={
+        Object {
+            "active": Array [
+              "Vehicles",
+            ],
+            "favorites": Array [],
+            "filmData": Array [],
+            "peopleData": Array [],
+            "planetData": Array [],
+            "vehicleData": Array [
+              Object {
+                "capacity": "1",
+                "class": "repulsorcraft",
+                "model": "X-34 landspeeder",
+                "name": "X-34 landspeeder",
+              },
+            ],
+          }
+    }
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -38,9 +57,9 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <Card
+        <Unknown
           addToFavorites={undefined}
-          props={
+          properties={
                     Object {
                               "capacity": "1",
                               "class": "repulsorcraft",
@@ -57,10 +76,10 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": "0",
-        "nodeType": "class",
+        "nodeType": "function",
         "props": Object {
           "addToFavorites": undefined,
-          "props": Object {
+          "properties": Object {
             "capacity": "1",
             "class": "repulsorcraft",
             "model": "X-34 landspeeder",
@@ -81,9 +100,9 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <Card
+          <Unknown
             addToFavorites={undefined}
-            props={
+            properties={
                         Object {
                                     "capacity": "1",
                                     "class": "repulsorcraft",
@@ -100,10 +119,10 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": "0",
-          "nodeType": "class",
+          "nodeType": "function",
           "props": Object {
             "addToFavorites": undefined,
-            "props": Object {
+            "properties": Object {
               "capacity": "1",
               "class": "repulsorcraft",
               "model": "X-34 landspeeder",

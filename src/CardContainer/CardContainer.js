@@ -26,7 +26,7 @@ export const CardContainer = ({ allData, addToFavorites }) => {
   const cards = cardsToRender.map((person, index) => {
     
     return  (<Card 
-              props={person}
+              properties={person}
               key={index}
               addToFavorites={addToFavorites}
             />)
@@ -40,10 +40,8 @@ export const CardContainer = ({ allData, addToFavorites }) => {
 }
 
 CardContainer.propTypes = {
-  name: PropTypes.string,
-  pop: PropTypes.string,
-  species: PropTypes.string,
-  homeworld: PropTypes.string
+  addToFavorites: PropTypes.func,
+  allData: PropTypes.object
 }
 
 
