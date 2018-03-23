@@ -1,0 +1,257 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should match the snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <App />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <Unknown
+          filmData={Array []}
+/>,
+        <header
+          className="App-header"
+>
+          <h1
+                    className="App-title"
+          >
+                    SWAMPIbox
+          </h1>
+          <button
+                    className="view-favorites-btn"
+          >
+                    favorites 
+                    0
+          </button>
+</header>,
+        <Unknown
+          active={Array []}
+          getData={[Function]}
+/>,
+        false,
+      ],
+      "className": "App",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "filmData": Array [],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <h1
+              className="App-title"
+>
+              SWAMPIbox
+</h1>,
+            <button
+              className="view-favorites-btn"
+>
+              favorites 
+              0
+</button>,
+          ],
+          "className": "App-header",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "SWAMPIbox",
+              "className": "App-title",
+            },
+            "ref": null,
+            "rendered": "SWAMPIbox",
+            "type": "h1",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "favorites ",
+                0,
+              ],
+              "className": "view-favorites-btn",
+            },
+            "ref": null,
+            "rendered": Array [
+              "favorites ",
+              0,
+            ],
+            "type": "button",
+          },
+        ],
+        "type": "header",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "active": Array [],
+          "getData": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      false,
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <Unknown
+            filmData={Array []}
+/>,
+          <header
+            className="App-header"
+>
+            <h1
+                        className="App-title"
+            >
+                        SWAMPIbox
+            </h1>
+            <button
+                        className="view-favorites-btn"
+            >
+                        favorites 
+                        0
+            </button>
+</header>,
+          <Unknown
+            active={Array []}
+            getData={[Function]}
+/>,
+          false,
+        ],
+        "className": "App",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "filmData": Array [],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h1
+                className="App-title"
+>
+                SWAMPIbox
+</h1>,
+              <button
+                className="view-favorites-btn"
+>
+                favorites 
+                0
+</button>,
+            ],
+            "className": "App-header",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "SWAMPIbox",
+                "className": "App-title",
+              },
+              "ref": null,
+              "rendered": "SWAMPIbox",
+              "type": "h1",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "favorites ",
+                  0,
+                ],
+                "className": "view-favorites-btn",
+              },
+              "ref": null,
+              "rendered": Array [
+                "favorites ",
+                0,
+              ],
+              "type": "button",
+            },
+          ],
+          "type": "header",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "active": Array [],
+            "getData": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        false,
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

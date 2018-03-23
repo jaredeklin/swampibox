@@ -3,7 +3,7 @@ import './App.css';
 import { CardContainer } from '../CardContainer/CardContainer';
 import { fetchFilmData, cleanFilmData, fetchPeopleData , fetchVehicleData, fetchPlanetData } from '../apiHelper';
 import { Opening } from '../Opening/Opening';
-import { ButtonContainer } from '../ButtonContainer/ButtonContainer'
+import { ButtonContainer } from '../ButtonContainer/ButtonContainer';
 
 class App extends Component {
   constructor() {
@@ -66,7 +66,6 @@ class App extends Component {
 
   }
 
-
   componentDidMount() {
     
   }
@@ -89,7 +88,6 @@ class App extends Component {
               active={this.state.active}
             /> 
         }
-        
       </div>
     );
   }
