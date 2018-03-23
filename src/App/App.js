@@ -85,7 +85,6 @@ class App extends Component {
             <CardContainer 
               addToFavorites={this.addToFavorites} 
               allData={this.state}
-              active={this.state.active}
             /> 
         }
       </div>

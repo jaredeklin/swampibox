@@ -3,11 +3,11 @@ import { Card } from '../Card/Card';
 import './cardContainer.css';
 import PropTypes from 'prop-types'
 
-export const CardContainer = ({ allData, active, addToFavorites }) => {
+export const CardContainer = ({ allData, addToFavorites }) => {
 
   let cardsToRender;
 
-  switch (active[0]) {
+  switch (allData.active[0]) {
     case 'People':
     cardsToRender = allData.peopleData
       break;
