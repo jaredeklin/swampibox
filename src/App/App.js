@@ -1,31 +1,73 @@
 import React, { Component } from 'react';
 import './App.css';
 import { CardContainer } from '../CardContainer/CardContainer';
-import { getFilmData } from '../apiHelper';
+import { fetchFilmData, cleanFilmData, fetchPeopleData , fetchVehicleData, fetchPlanetData } from '../apiHelper';
 import { Opening } from '../Opening/Opening';
-import { ButtonContainer } from '../ButtonContainer/ButtonContainer'
+import { ButtonContainer } from '../ButtonContainer/ButtonContainer';
 
 class App extends Component {
   constructor() {
     super()
     this.state = {
       filmData: [],
-      favorites: []
+      favorites: [],
+      peopleData: [],
+      vehicleData: [],
+      planetData: [],
+      active: []
     }
   }
 
-  getData = () => {
-    fetch('https://swapi.co/api/films/')
-      .then(data => data.json())
-      .then(data => this.setState({
-        filmData: getFilmData(data)
-      }))
-      .catch(error => console.log('bad!'));
+  getData = (type) => {
+    this.addToActive(type)
+    if (type === 'People') {
+      fetchPeopleData()
+        .then(peopleData => this.setState({ peopleData }))
+    }
+
+    if (type === 'Vehicles') {
+      fetchVehicleData()
+        .then(vehicleData => this.setState({ vehicleData }))
+    }
+
+    if (type === 'Planets')
+      fetchPlanetData()
+        .then(planetData => this.setState({ planetData }))
+  }
+
+  addToActive = (type) => {
+    const activeCard = [...this.state.active]
+    if (activeCard.length >= 1 && activeCard[0] !== type) {
+      activeCard.splice(0, 1, type)
+    } else if (activeCard[0] !== type){
+      activeCard.push(type)
+    }
+    this.setState({ active: activeCard })
+  }
+
+
+  addToFavorites = (cardProps, event) => {
+
+    var updateFavorite = [...this.state.favorites];
+
+    if( updateFavorite.length === 0 ) {
+      updateFavorite.push(cardProps)
+    } else {
+      const match = updateFavorite.find(card => card.name === cardProps.name)
+
+      if(match) {
+        updateFavorite = updateFavorite.filter(card => card.name !== cardProps.name)
+      } else {
+        updateFavorite.push(cardProps);
+      }
+    }
+
+    this.setState({ favorites: updateFavorite})
 
   }
 
   componentDidMount() {
-    this.getData();
+    
   }
 
   render() {
@@ -37,9 +79,15 @@ class App extends Component {
           <button className="view-favorites-btn">favorites {this.state.favorites.length}</button>
         </header>
         
-        <ButtonContainer />
-        <CardContainer />
-        
+        <ButtonContainer getData={this.getData} active={this.state.active}/>
+        { 
+          this.state.active.length === 1 &&
+            <CardContainer 
+              addToFavorites={this.addToFavorites} 
+              allData={this.state}
+              active={this.state.active}
+            /> 
+        }
       </div>
     );
   }
