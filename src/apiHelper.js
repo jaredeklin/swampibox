@@ -1,6 +1,8 @@
+const rootUrl = 'https://swapi.co/api/';
+
 export const fetchFilmData = () => {
 
-  return fetch('https://swapi.co/api/films/')
+  return fetch(`${rootUrl}films/`)
 }
 
 export const cleanFilmData = (films) => {
@@ -16,7 +18,7 @@ export const cleanFilmData = (films) => {
 }
 
 export const fetchPeopleData = () => {
-    return fetch('https://swapi.co/api/people/')
+    return fetch(`${rootUrl}people/`)
       .then(response => response.json())
       .then(peoplesData => fetchPlanet(peoplesData.results))
       .then(updatedData => fetchSpecies(updatedData))
@@ -51,7 +53,7 @@ const fetchSpecies = (updatedData) => {
 
 export const fetchPlanetData = () => {
 
-  return fetch("https://swapi.co/api/planets/")
+  return fetch(`${rootUrl}planets/`)
     .then(response => response.json())
     .then(planetData => {
       return planetData.results.reduce((planetArray, planet) => {
@@ -92,7 +94,8 @@ const getResidents = (planetData) => {
 }
 
 export const fetchVehicleData = () => {
-  return fetch('https://swapi.co/api/vehicles/')
+
+  return fetch(`${rootUrl}vehicles/`)
     .then(response => response.json())
     .then(vehicleData => cleanVehicleData(vehicleData))
 }
@@ -104,11 +107,11 @@ const cleanVehicleData = (vehicleData) => {
       model: vehicle.model,
       class: vehicle.vehicle_class,
       capacity: vehicle.passengers
-
     }
     return [...vehicleArray, vehicleObj]
   }, [])
 }
+
 
 
 

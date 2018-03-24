@@ -63,7 +63,6 @@ class App extends Component {
     }
 
     this.setState({ favorites: updateFavorite})
-
   }
 
   componentDidMount() {
@@ -76,7 +75,7 @@ class App extends Component {
         <Opening filmData={this.state.filmData} />
         <header className="App-header">
           <h1 className="App-title">SWAMPIbox</h1>
-          <button className="view-favorites-btn">favorites {this.state.favorites.length}</button>
+          <button onClick={() => this.addToActive('Favorites')} className="view-favorites-btn">favorites {this.state.favorites.length}</button>
         </header>
         
         <ButtonContainer getData={this.getData} active={this.state.active}/>
@@ -85,7 +84,6 @@ class App extends Component {
             <CardContainer 
               addToFavorites={this.addToFavorites} 
               allData={this.state}
-              active={this.state.active}
             /> 
         }
       </div>

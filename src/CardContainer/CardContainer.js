@@ -3,11 +3,11 @@ import { Card } from '../Card/Card';
 import './cardContainer.css';
 import PropTypes from 'prop-types'
 
-export const CardContainer = ({ allData, active, addToFavorites }) => {
+export const CardContainer = ({ allData, addToFavorites }) => {
 
   let cardsToRender;
 
-  switch (active[0]) {
+  switch (allData.active[0]) {
     case 'People':
     cardsToRender = allData.peopleData
       break;
@@ -20,15 +20,27 @@ export const CardContainer = ({ allData, active, addToFavorites }) => {
     cardsToRender = allData.vehicleData
       break;
 
+    case 'Favorites':
+    cardsToRender = allData.favorites
+      break;
+
     default:
   }
 
   const cards = cardsToRender.map((person, index) => {
-    
+    let addClass;
+
+    allData.favorites.forEach(favorite => {
+      if(favorite.name === person.name) {
+        addClass = 'active'
+      }
+    })
+
     return  (<Card 
-              props={person}
+              properties={person}
               key={index}
               addToFavorites={addToFavorites}
+              buttonClass={addClass}
             />)
   });
 
@@ -40,10 +52,8 @@ export const CardContainer = ({ allData, active, addToFavorites }) => {
 }
 
 CardContainer.propTypes = {
-  name: PropTypes.string,
-  pop: PropTypes.string,
-  species: PropTypes.string,
-  homeworld: PropTypes.string
+  addToFavorites: PropTypes.func,
+  allData: PropTypes.object
 }
 
 

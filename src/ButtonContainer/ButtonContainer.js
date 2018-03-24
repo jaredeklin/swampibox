@@ -6,14 +6,14 @@ import PropTypes from 'prop-types'
 export const ButtonContainer = ({getData, active}) => {
   const category = ['People', 'Planets', 'Vehicles']
 
-  const createButtons = category.map(type => {
+  const createButtons = category.map((type, index) => {
 
     let activeToggle = 'category-button'
 
     if (type === active[0]) {
       activeToggle = 'category-button active'
     }
-    return (<Button category={type} getData={getData} className={activeToggle} />)
+    return (<Button category={type} getData={getData} className={activeToggle} key={index}/>)
   })
 
   return (
@@ -24,5 +24,6 @@ export const ButtonContainer = ({getData, active}) => {
 }
 
 Button.propTypes = {
-  getData: PropTypes.func
+  getData: PropTypes.func,
+  active: PropTypes.array
 }
