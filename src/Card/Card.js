@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './card.css';
 import PropTypes from 'prop-types'
 
-export const Card = ({properties, addToFavorites}) => {
+export const Card = ({properties, addToFavorites, buttonClass}) => {
 
   const displayCards = Object.keys(properties)
     .filter(property => property !== "name")
@@ -17,7 +17,7 @@ export const Card = ({properties, addToFavorites}) => {
   return (
     <div className='card'>
       <h2>{properties.name}</h2>
-      <button onClick={() => addToFavorites(properties)}>Favorite</button>
+      <button onClick={() => addToFavorites(properties)} className={buttonClass}>Favorite</button>
       <ul>
         {displayCards}
       </ul>
@@ -27,5 +27,6 @@ export const Card = ({properties, addToFavorites}) => {
 
 Card.propTypes = {
   properties: PropTypes.object,
-  addToFavorites: PropTypes.func
+  addToFavorites: PropTypes.func,
+  className: PropTypes.string
 }

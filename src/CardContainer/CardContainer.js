@@ -20,15 +20,27 @@ export const CardContainer = ({ allData, addToFavorites }) => {
     cardsToRender = allData.vehicleData
       break;
 
+    case 'Favorites':
+    cardsToRender = allData.favorites
+      break;
+
     default:
   }
 
   const cards = cardsToRender.map((person, index) => {
-    
+    let addClass;
+
+    allData.favorites.forEach(favorite => {
+      if(favorite.name === person.name) {
+        addClass = 'active'
+      }
+    })
+
     return  (<Card 
               properties={person}
               key={index}
               addToFavorites={addToFavorites}
+              buttonClass={addClass}
             />)
   });
 
