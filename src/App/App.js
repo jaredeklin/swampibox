@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { CardContainer } from '../CardContainer/CardContainer';
-import { fetchFilmData, cleanFilmData, fetchPeopleData , fetchVehicleData, fetchPlanetData } from '../apiHelper';
+import { fetchFilmData, cleanFilmData, fetchPeopleData , fetchVehicleData, fetchPlanetData } from '../helpers/apiHelper';
 import { Opening } from '../Opening/Opening';
 import { ButtonContainer } from '../ButtonContainer/ButtonContainer';
 
@@ -14,7 +14,8 @@ class App extends Component {
       peopleData: [],
       vehicleData: [],
       planetData: [],
-      active: []
+      active: [],
+      opening: true
     }
   }
 
@@ -48,43 +49,48 @@ class App extends Component {
 
   addToFavorites = (cardProps, event) => {
 
-    var updateFavorite = [...this.state.favorites];
+    let favorites = [...this.state.favorites];
 
-    if( updateFavorite.length === 0 ) {
-      updateFavorite.push(cardProps)
+    if (favorites.includes(cardProps)) {
+      favorites = favorites.filter(card => card.name !== cardProps.name)
     } else {
-      const match = updateFavorite.find(card => card.name === cardProps.name)
-
-      if(match) {
-        updateFavorite = updateFavorite.filter(card => card.name !== cardProps.name)
-      } else {
-        updateFavorite.push(cardProps);
-      }
+      favorites.push(cardProps);
     }
 
-    this.setState({ favorites: updateFavorite})
+    this.setState({ favorites })
+  }
+
+  toggleOpening = () => {
+    this.setState({opening: !this.state.opening})
   }
 
   componentDidMount() {
-    
+    fetchFilmData()
+      .then(filmData => this.setState({ filmData }))
   }
 
   render() {
     return (
       <div className="App">
-        <Opening filmData={this.state.filmData} />
-        <header className="App-header">
-          <h1 className="App-title">SWAMPIbox</h1>
-          <button onClick={() => this.addToActive('Favorites')} className="view-favorites-btn">favorites {this.state.favorites.length}</button>
-        </header>
-        
-        <ButtonContainer getData={this.getData} active={this.state.active}/>
-        { 
-          this.state.active.length === 1 &&
-            <CardContainer 
-              addToFavorites={this.addToFavorites} 
-              allData={this.state}
-            /> 
+        { this.state.opening &&
+          <Opening filmData={this.state.filmData} toggleOpening={this.toggleOpening} />
+        }
+        { !this.state.opening &&
+          <div>
+          <header>
+            <h1>SWAMPIbox</h1>
+            <button onClick={() => this.addToActive('Favorites')} className="view-favorites-btn">favorites {this.state.favorites.length}</button>
+          </header>
+          
+          <ButtonContainer getData={this.getData} active={this.state.active}/>
+          { 
+            this.state.active.length === 1 &&
+              <CardContainer 
+                addToFavorites={this.addToFavorites} 
+                allData={this.state}
+              /> 
+          }
+          </div>
         }
       </div>
     );

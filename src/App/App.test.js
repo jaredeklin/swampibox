@@ -34,7 +34,8 @@ describe('App', ()=> {
       peopleData: [],
       vehicleData: [],
       planetData: [],
-      active: []
+      active: [],
+      opening: true
     }
 
     expect(wrapper.state()).toEqual(expectedState);

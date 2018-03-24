@@ -1,24 +1,24 @@
 import React from 'react';
 import './opening.css';
 
-export const Opening = ({filmData}) => {
+
+export const Opening = ({filmData, toggleOpening}) => {
   if( filmData.length > 0 ) {
-    // console.log(filmData)
-    var randomNum = Math.floor(Math.random() * (filmData.length));
+    var randomNum = Math.floor(Math.random() * (filmData.length - 1));
+      console.log(randomNum)
+      console.log(filmData[0])
   }
-
-  // setTimeout(() => {
-  //   console.log('timeout')
-
-  // }, 10000)
-
+ 
   return (
-    <div className='opening-container'>
+    <div >
       {randomNum && 
-        <div className='opening-crawl'>   
-          <p>{filmData[randomNum].openingCrawl}</p>
-          <p>{filmData[randomNum].title}</p>
-          <p>{filmData[randomNum].release}</p>
+        <div className='opening-container'>
+          <button className="opening-button" onClick={toggleOpening}>Enter the SwampiBox</button>
+          <div className='opening-crawl'>   
+            <p>{filmData[randomNum].openingCrawl}</p>
+            <p>{filmData[randomNum].title}</p>
+            <p>{filmData[randomNum].release}</p>
+          </div>
         </div>
       } 
     </div>

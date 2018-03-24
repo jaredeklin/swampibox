@@ -1,7 +1,6 @@
 .opening-container {
   height: 100vh;
   overflow: hidden;
-  display: none;
 }
 
 .opening-crawl {
@@ -10,7 +9,7 @@
   position: relative;
   top: 50px;
   width: 400px;
-  height: 100%;
+  height: 90%;
   margin: 0 auto;
   line-height: 50px;
   text-align: center;
@@ -18,12 +17,21 @@
   animation: crawl 30s linear infinite;
 }
 
+
+.opening-button {
+  display: block;
+  height: 50px;
+  margin: auto;
+  overflow: hidden;
+}
+
 @keyframes crawl {
   0% {
-    transform: translateY(100%);
+    transform: translateY(120%);
   }
 
   100% {
     transform: translateY(-100%);
   }
 }
+

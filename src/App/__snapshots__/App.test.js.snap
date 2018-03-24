@@ -20,26 +20,7 @@ ShallowWrapper {
       "children": Array [
         <Unknown
           filmData={Array []}
-/>,
-        <header
-          className="App-header"
->
-          <h1
-                    className="App-title"
-          >
-                    SWAMPIbox
-          </h1>
-          <button
-                    className="view-favorites-btn"
-                    onClick={[Function]}
-          >
-                    favorites 
-                    0
-          </button>
-</header>,
-        <Unknown
-          active={Array []}
-          getData={[Function]}
+          toggleOpening={[Function]}
 />,
         false,
       ],
@@ -53,75 +34,7 @@ ShallowWrapper {
         "nodeType": "function",
         "props": Object {
           "filmData": Array [],
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            <h1
-              className="App-title"
->
-              SWAMPIbox
-</h1>,
-            <button
-              className="view-favorites-btn"
-              onClick={[Function]}
->
-              favorites 
-              0
-</button>,
-          ],
-          "className": "App-header",
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "SWAMPIbox",
-              "className": "App-title",
-            },
-            "ref": null,
-            "rendered": "SWAMPIbox",
-            "type": "h1",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": Array [
-                "favorites ",
-                0,
-              ],
-              "className": "view-favorites-btn",
-              "onClick": [Function],
-            },
-            "ref": null,
-            "rendered": Array [
-              "favorites ",
-              0,
-            ],
-            "type": "button",
-          },
-        ],
-        "type": "header",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "active": Array [],
-          "getData": [Function],
+          "toggleOpening": [Function],
         },
         "ref": null,
         "rendered": null,
@@ -140,26 +53,7 @@ ShallowWrapper {
         "children": Array [
           <Unknown
             filmData={Array []}
-/>,
-          <header
-            className="App-header"
->
-            <h1
-                        className="App-title"
-            >
-                        SWAMPIbox
-            </h1>
-            <button
-                        className="view-favorites-btn"
-                        onClick={[Function]}
-            >
-                        favorites 
-                        0
-            </button>
-</header>,
-          <Unknown
-            active={Array []}
-            getData={[Function]}
+            toggleOpening={[Function]}
 />,
           false,
         ],
@@ -173,75 +67,7 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "filmData": Array [],
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              <h1
-                className="App-title"
->
-                SWAMPIbox
-</h1>,
-              <button
-                className="view-favorites-btn"
-                onClick={[Function]}
->
-                favorites 
-                0
-</button>,
-            ],
-            "className": "App-header",
-          },
-          "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "SWAMPIbox",
-                "className": "App-title",
-              },
-              "ref": null,
-              "rendered": "SWAMPIbox",
-              "type": "h1",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": Array [
-                  "favorites ",
-                  0,
-                ],
-                "className": "view-favorites-btn",
-                "onClick": [Function],
-              },
-              "ref": null,
-              "rendered": Array [
-                "favorites ",
-                0,
-              ],
-              "type": "button",
-            },
-          ],
-          "type": "header",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "active": Array [],
-            "getData": [Function],
+            "toggleOpening": [Function],
           },
           "ref": null,
           "rendered": null,
