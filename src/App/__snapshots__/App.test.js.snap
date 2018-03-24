@@ -31,6 +31,7 @@ ShallowWrapper {
           </h1>
           <button
                     className="view-favorites-btn"
+                    onClick={[Function]}
           >
                     favorites 
                     0
@@ -70,6 +71,7 @@ ShallowWrapper {
 </h1>,
             <button
               className="view-favorites-btn"
+              onClick={[Function]}
 >
               favorites 
               0
@@ -101,6 +103,7 @@ ShallowWrapper {
                 0,
               ],
               "className": "view-favorites-btn",
+              "onClick": [Function],
             },
             "ref": null,
             "rendered": Array [
@@ -148,6 +151,7 @@ ShallowWrapper {
             </h1>
             <button
                         className="view-favorites-btn"
+                        onClick={[Function]}
             >
                         favorites 
                         0
@@ -187,6 +191,7 @@ ShallowWrapper {
 </h1>,
               <button
                 className="view-favorites-btn"
+                onClick={[Function]}
 >
                 favorites 
                 0
@@ -218,6 +223,7 @@ ShallowWrapper {
                   0,
                 ],
                 "className": "view-favorites-btn",
+                "onClick": [Function],
               },
               "ref": null,
               "rendered": Array [

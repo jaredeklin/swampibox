@@ -1,13 +1,21 @@
-import {fetchPeopleData} from './apiHelper'
-describe('fetchPeopleData', () => {
-  const expected = 'https://swapi.co/api/people/';
+import {
+  fetchPeopleData, 
+  fetchVehicleData, 
+} from './apiHelper';
+
+import { mockVehicleData, finalVehicleData } from './mockData/mockData'
+
+describe('fetchVehicleData', () => {
+
   beforeEach(() => {
-    window.fetch = jest.fn().mockImplementation(() => {
-      Promise.resolve({ json: () => Promise.resolve()})
-    })
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      ok: true,
+      json: () => Promise.resolve(mockVehicleData)
+    }));
+  })
 
-    it('should have been called with correct params', () => {
-
-    })
+  it('should do shit', async () => {
+    const cleanVehicle = await fetchVehicleData()
+    expect(cleanVehicle).toEqual(finalVehicleData)
   })
 })
