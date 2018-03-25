@@ -18,8 +18,10 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
+        false,
         <Unknown
           filmData={Array []}
+          randomNumber={0}
           toggleOpening={[Function]}
 />,
         false,
@@ -28,12 +30,14 @@ ShallowWrapper {
     },
     "ref": null,
     "rendered": Array [
+      false,
       Object {
         "instance": null,
         "key": undefined,
         "nodeType": "function",
         "props": Object {
           "filmData": Array [],
+          "randomNumber": 0,
           "toggleOpening": [Function],
         },
         "ref": null,
@@ -51,8 +55,10 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
+          false,
           <Unknown
             filmData={Array []}
+            randomNumber={0}
             toggleOpening={[Function]}
 />,
           false,
@@ -61,12 +67,14 @@ ShallowWrapper {
       },
       "ref": null,
       "rendered": Array [
+        false,
         Object {
           "instance": null,
           "key": undefined,
           "nodeType": "function",
           "props": Object {
             "filmData": Array [],
+            "randomNumber": 0,
             "toggleOpening": [Function],
           },
           "ref": null,
@@ -84,6 +92,7 @@ ShallowWrapper {
         "enableComponentDidUpdateOnSetState": true,
       },
     },
+    "disableLifecycleMethods": true,
   },
 }
 `;

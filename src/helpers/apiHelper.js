@@ -1,10 +1,8 @@
-import { cleanVehicleData } from './cleanVehicleData/cleanVehicleData';
-import {
-  cleanFilmData,
-  cleanHomeWorldData,
-  cleanPlanetData,
-} from './cleaners/cleaners';
-
+import { cleanVehicleData } from './cleanVehicleData';
+import { cleanFilmData } from './cleanFilmData';
+import { cleanHomeWorldData } from './cleanHomeWorldData';
+import { cleanPlanetData } from './cleanPlanetData';
+import { fetchPeopleData } from './fetchPeopleData'
 const rootUrl = 'https://swapi.co/api/';
 
 export const fetchFilmData = () => {
@@ -13,49 +11,43 @@ export const fetchFilmData = () => {
     .then(filmData => cleanFilmData(filmData))
 }
 
-export const fetchPeopleData = () => {
-  return fetch(`${rootUrl}people/`)
-    .then(response => response.json())
-    .then(peoplesData => fetchHomeworldData(peoplesData.results))
-    .then(updatedData => fetchSpecies(updatedData))  }
+// export const fetchPeopleData = () => {
+//   return fetch(`${rootUrl}people/`)
+//     .then(response => response.json())
+//     .then(peoplesData => fetchHomeWorldData(peoplesData.results))
+//     .then(updatedData => fetchSpecies(updatedData))  }
 
-export const fetchHomeworldData = (peopleData) => {
-  const promises = peopleData.map(character => {
+// export const fetchHomeWorldData = (peopleData) => {
 
-    return fetch(character.homeworld)
-      .then(response => response.json())
-      .then(homeWorldData => cleanHomeWorldData(homeWorldData, character))
-  })
-  return Promise.all(promises)
-}
+//   const promises = peopleData.map(character => {
 
-export const fetchSpecies = (updatedData) => {
-  const promises = updatedData.map((character) => {
+//     return fetch(character.homeworld)
+//       .then(response => response.json())
+//       .then(homeWorldData => cleanHomeWorldData(homeWorldData, character))
+//   })
+//   return Promise.all(promises)
+// }
 
-    return fetch(character.species)
-     .then(response => response.json())
-     .then(speciesData => ({...character, species: speciesData.name}))
-  })
+// export const fetchSpecies = (updatedData) => {
+//   const promises = updatedData.map((character) => {
 
-  return Promise.all(promises)
-}
+//     return fetch(character.species)
+//      .then(response => response.json())
+//      .then(speciesData => ({...character, species: speciesData.name}))
+//   })
+
+//   return Promise.all(promises)
+// }
 
 export const fetchPlanetData = () => {
 
   return fetch(`${rootUrl}planets/`)
     .then(response => response.json())
     .then(planetData => cleanPlanetData(planetData))
-    .then(updatedData => fetchResidents(updatedData))
-    
+    .then(updatedData => fetchResidents(updatedData))   
 }
 
-
-
-// const getName (names) => {
-//   //turn residentNames from array to string
-// }
-
-const fetchResidents = (planetData) => {
+export const fetchResidents = (planetData) => {
 
   const promises = planetData.map(planet => {
 
@@ -67,7 +59,7 @@ const fetchResidents = (planetData) => {
     })
     
     return Promise.all(inhabitants)
-      .then(residentNames => ({...planet, residents: residentNames}))
+      .then(residentNames => ({...planet, residents: residentNames.join(', ')}))
   })
 
   return Promise.all(promises)
@@ -79,18 +71,6 @@ export const fetchVehicleData = () => {
     .then(response => response.json())
     .then(vehicleData => cleanVehicleData(vehicleData))
 }
-
-// export const cleanVehicleData = (vehicleData) => {
-//   return vehicleData.results.reduce((vehicleArray, vehicle) => {
-//     const vehicleObj = {
-//       name: vehicle.name,
-//       model: vehicle.model,
-//       class: vehicle.vehicle_class,
-//       capacity: vehicle.passengers
-//     }
-//     return [...vehicleArray, vehicleObj]
-//   }, [])
-// }
 
 
 

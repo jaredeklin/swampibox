@@ -2,22 +2,17 @@ import React from 'react';
 import './opening.css';
 
 
-export const Opening = ({filmData, toggleOpening}) => {
-  if( filmData.length > 0 ) {
-    var randomNum = Math.floor(Math.random() * (filmData.length - 1));
-      console.log(randomNum)
-      console.log(filmData[0])
-  }
- 
+export const Opening = ({filmData, toggleOpening, randomNumber}) => {
+
   return (
-    <div >
-      {randomNum && 
+    <div className='overview'>
+      {filmData.length > 0 && 
         <div className='opening-container'>
-          <button className="opening-button" onClick={toggleOpening}>Enter the SwampiBox</button>
-          <div className='opening-crawl'>   
-            <p>{filmData[randomNum].openingCrawl}</p>
-            <p>{filmData[randomNum].title}</p>
-            <p>{filmData[randomNum].release}</p>
+          <button className="opening-button" onClick={toggleOpening}>Enter the SwapiBox</button>
+          <div className='crawl'>   
+            <p>{filmData[randomNumber].openingCrawl}</p>
+            <p className='title'>{filmData[randomNumber].title}</p>
+            <p className='year'>{filmData[randomNumber].release}</p>
           </div>
         </div>
       } 

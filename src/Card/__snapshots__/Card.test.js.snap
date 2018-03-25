@@ -32,10 +32,9 @@ ShallowWrapper {
           X-34 landspeeder
 </h2>,
         <button
+          className={undefined}
           onClick={[Function]}
->
-          Favorite
-</button>,
+/>,
         <ul>
           <li>
                     <span
@@ -86,11 +85,11 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "Favorite",
+          "className": undefined,
           "onClick": [Function],
         },
         "ref": null,
-        "rendered": "Favorite",
+        "rendered": null,
         "type": "button",
       },
       Object {
@@ -249,10 +248,9 @@ ShallowWrapper {
             X-34 landspeeder
 </h2>,
           <button
+            className={undefined}
             onClick={[Function]}
->
-            Favorite
-</button>,
+/>,
           <ul>
             <li>
                         <span
@@ -303,11 +301,11 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Favorite",
+            "className": undefined,
             "onClick": [Function],
           },
           "ref": null,
-          "rendered": "Favorite",
+          "rendered": null,
           "type": "button",
         },
         Object {

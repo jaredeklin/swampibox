@@ -1,0 +1,1 @@
+export const fetchHomeWorldData = jest.fn();

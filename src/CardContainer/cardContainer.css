@@ -1,6 +1,4 @@
 .card-container {
   display: inline-block;
-  border: 1px solid white;
   width: 100%;
-  min-height: 400px;
 }

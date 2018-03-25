@@ -3,8 +3,8 @@ import Button from '../Button/Button';
 import './buttonContainer.css';
 import PropTypes from 'prop-types'
 
-export const ButtonContainer = ({getData, active}) => {
-  const category = ['People', 'Planets', 'Vehicles']
+export const ButtonContainer = ({getData, active, favorites}) => {
+  const category = ['People', 'Planets', 'Vehicles', 'Favorites']
 
   const createButtons = category.map((type, index) => {
 
@@ -13,7 +13,12 @@ export const ButtonContainer = ({getData, active}) => {
     if (type === active[0]) {
       activeToggle = 'category-button active'
     }
-    return (<Button category={type} getData={getData} className={activeToggle} key={index}/>)
+    return (
+      <Button category={type} 
+        getData={getData} 
+        className={activeToggle} 
+        favorites={favorites}
+        key={index}/>)
   })
 
   return (

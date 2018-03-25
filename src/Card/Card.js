@@ -1,6 +1,6 @@
 import React from 'react';
 import './card.css';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
 export const Card = ({properties, addToFavorites, buttonClass}) => {
 
@@ -17,7 +17,7 @@ export const Card = ({properties, addToFavorites, buttonClass}) => {
   return (
     <div className='card'>
       <h2>{properties.name}</h2>
-      <button onClick={() => addToFavorites(properties)} className={buttonClass}>Favorite</button>
+      <button onClick={() => addToFavorites(properties)} className={buttonClass}></button>
       <ul>
         {displayCards}
       </ul>

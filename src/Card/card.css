@@ -1,9 +1,10 @@
 .card {
   border: 1px solid white;
   width: 300px;
-  height: 300px;
+  height: auto;
   display: inline-block;
   vertical-align: top;
+  margin: 15px;
 }
 
 .card ul {
@@ -12,10 +13,27 @@
 
 .card li {
   list-style: none;
+  margin: 15px;
+  font-size: 20px;
+}
+
+.card-keys {
+  font-weight: bold;
 }
 
 .card h2 {
   display: inline-block;
 }
 
-/*.active*/
+.card-button {
+  height: 75px;
+  width: 75px;
+  float: right;
+  background-color: transparent;
+  background-image: url('./star.svg');
+}
+
+.card-button .active {
+  background-color: red;
+  /*background-image: url('./star.svg');*/
+}

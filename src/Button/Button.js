@@ -2,15 +2,25 @@ import React from 'react';
 import './button.css';
 import PropTypes from 'prop-types';
 
-export const Button = ({category, getData, className}) => {
+export const Button = ({category, getData, className, favorites}) => {
+  if(category === 'Favorites') {
+    return (
+      <button 
+        className={className}
+        onClick={() => getData(category)}
+        value={category}
+      >{category}: <span>{favorites}</span></button>
+    )
 
-  return (
-    <button 
-      className={className}
-      onClick={() => getData(category)}
-      value={category}
-    >{category}</button>
-  )
+  } else {
+    return (
+      <button 
+        className={className}
+        onClick={() => getData(category)}
+        value={category}
+      >{category}</button>
+    )
+  }
 }
 
 
