@@ -106,7 +106,7 @@ class App extends Component {
           !this.state.opening && !this.state.error &&
           <div>
             <header>
-              <h1>SWAPIbox</h1>
+              <h1>War of Stars</h1>
             </header>
           
             <ButtonContainer 

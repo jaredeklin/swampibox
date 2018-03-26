@@ -11,7 +11,7 @@ export const Opening = ({filmData, toggleOpening, randomNumber}) => {
         <div className='opening-container'>
           <button 
             className="opening-button" 
-            onClick={toggleOpening}>Enter the SwapiBox
+            onClick={toggleOpening}>Enter the War of Stars
           </button>
           <div className='crawl'>   
             <p>{filmData[randomNumber].openingCrawl}</p>

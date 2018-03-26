@@ -3,8 +3,8 @@
   margin: 30px;
   height: 100px;
   width: 400px;
-  color: #FEDA4A;
-  border: 3px solid #FEDA4A;
+  color: #FFFF00;
+  border: 3px solid #FFFF00;
   border-radius: 10px;
   background-color: rgba(0, 0, 0, .5);
   font-size: 36px;
@@ -12,8 +12,8 @@
 }
 
 .opening-button:hover {
-  box-shadow: 0px 0px 40px 0px #FEDA4A;
-  text-shadow: 0px 0px 20px #FEDA4A;
+  box-shadow: 0px 0px 40px 0px #FFFF00;
+  text-shadow: 0px 0px 20px #FFFF00;
 }
 
 .title,
@@ -32,7 +32,7 @@
   justify-content: center;
   position: relative;
   height: 800px;
-  color: #feda4a;
+  color: #FFFF00;
   font-family: 'Pathway Gothic One', sans-serif;
   font-size: 500%;
   font-weight: 600;
