@@ -10,7 +10,6 @@ ShallowWrapper {
             "People",
           ]
     }
-    getData={[Function]}
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -28,17 +27,26 @@ ShallowWrapper {
         <Unknown
           category="People"
           className="category-button active"
-          getData={[Function]}
+          favorites={undefined}
+          getData={undefined}
 />,
         <Unknown
           category="Planets"
           className="category-button"
-          getData={[Function]}
+          favorites={undefined}
+          getData={undefined}
 />,
         <Unknown
           category="Vehicles"
           className="category-button"
-          getData={[Function]}
+          favorites={undefined}
+          getData={undefined}
+/>,
+        <Unknown
+          category="Favorites"
+          className="category-button"
+          favorites={undefined}
+          getData={undefined}
 />,
       ],
       "className": "button-container",
@@ -52,7 +60,8 @@ ShallowWrapper {
         "props": Object {
           "category": "People",
           "className": "category-button active",
-          "getData": [Function],
+          "favorites": undefined,
+          "getData": undefined,
         },
         "ref": null,
         "rendered": null,
@@ -65,7 +74,8 @@ ShallowWrapper {
         "props": Object {
           "category": "Planets",
           "className": "category-button",
-          "getData": [Function],
+          "favorites": undefined,
+          "getData": undefined,
         },
         "ref": null,
         "rendered": null,
@@ -78,7 +88,22 @@ ShallowWrapper {
         "props": Object {
           "category": "Vehicles",
           "className": "category-button",
-          "getData": [Function],
+          "favorites": undefined,
+          "getData": undefined,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "3",
+        "nodeType": "function",
+        "props": Object {
+          "category": "Favorites",
+          "className": "category-button",
+          "favorites": undefined,
+          "getData": undefined,
         },
         "ref": null,
         "rendered": null,
@@ -97,17 +122,26 @@ ShallowWrapper {
           <Unknown
             category="People"
             className="category-button active"
-            getData={[Function]}
+            favorites={undefined}
+            getData={undefined}
 />,
           <Unknown
             category="Planets"
             className="category-button"
-            getData={[Function]}
+            favorites={undefined}
+            getData={undefined}
 />,
           <Unknown
             category="Vehicles"
             className="category-button"
-            getData={[Function]}
+            favorites={undefined}
+            getData={undefined}
+/>,
+          <Unknown
+            category="Favorites"
+            className="category-button"
+            favorites={undefined}
+            getData={undefined}
 />,
         ],
         "className": "button-container",
@@ -121,7 +155,8 @@ ShallowWrapper {
           "props": Object {
             "category": "People",
             "className": "category-button active",
-            "getData": [Function],
+            "favorites": undefined,
+            "getData": undefined,
           },
           "ref": null,
           "rendered": null,
@@ -134,7 +169,8 @@ ShallowWrapper {
           "props": Object {
             "category": "Planets",
             "className": "category-button",
-            "getData": [Function],
+            "favorites": undefined,
+            "getData": undefined,
           },
           "ref": null,
           "rendered": null,
@@ -147,7 +183,22 @@ ShallowWrapper {
           "props": Object {
             "category": "Vehicles",
             "className": "category-button",
-            "getData": [Function],
+            "favorites": undefined,
+            "getData": undefined,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "3",
+          "nodeType": "function",
+          "props": Object {
+            "category": "Favorites",
+            "className": "category-button",
+            "favorites": undefined,
+            "getData": undefined,
           },
           "ref": null,
           "rendered": null,
@@ -173,7 +224,6 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Unknown
     active={Array []}
-    getData={[Function]}
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -191,17 +241,26 @@ ShallowWrapper {
         <Unknown
           category="People"
           className="category-button"
-          getData={[Function]}
+          favorites={undefined}
+          getData={undefined}
 />,
         <Unknown
           category="Planets"
           className="category-button"
-          getData={[Function]}
+          favorites={undefined}
+          getData={undefined}
 />,
         <Unknown
           category="Vehicles"
           className="category-button"
-          getData={[Function]}
+          favorites={undefined}
+          getData={undefined}
+/>,
+        <Unknown
+          category="Favorites"
+          className="category-button"
+          favorites={undefined}
+          getData={undefined}
 />,
       ],
       "className": "button-container",
@@ -215,7 +274,8 @@ ShallowWrapper {
         "props": Object {
           "category": "People",
           "className": "category-button",
-          "getData": [Function],
+          "favorites": undefined,
+          "getData": undefined,
         },
         "ref": null,
         "rendered": null,
@@ -228,7 +288,8 @@ ShallowWrapper {
         "props": Object {
           "category": "Planets",
           "className": "category-button",
-          "getData": [Function],
+          "favorites": undefined,
+          "getData": undefined,
         },
         "ref": null,
         "rendered": null,
@@ -241,7 +302,22 @@ ShallowWrapper {
         "props": Object {
           "category": "Vehicles",
           "className": "category-button",
-          "getData": [Function],
+          "favorites": undefined,
+          "getData": undefined,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "3",
+        "nodeType": "function",
+        "props": Object {
+          "category": "Favorites",
+          "className": "category-button",
+          "favorites": undefined,
+          "getData": undefined,
         },
         "ref": null,
         "rendered": null,
@@ -260,17 +336,26 @@ ShallowWrapper {
           <Unknown
             category="People"
             className="category-button"
-            getData={[Function]}
+            favorites={undefined}
+            getData={undefined}
 />,
           <Unknown
             category="Planets"
             className="category-button"
-            getData={[Function]}
+            favorites={undefined}
+            getData={undefined}
 />,
           <Unknown
             category="Vehicles"
             className="category-button"
-            getData={[Function]}
+            favorites={undefined}
+            getData={undefined}
+/>,
+          <Unknown
+            category="Favorites"
+            className="category-button"
+            favorites={undefined}
+            getData={undefined}
 />,
         ],
         "className": "button-container",
@@ -284,7 +369,8 @@ ShallowWrapper {
           "props": Object {
             "category": "People",
             "className": "category-button",
-            "getData": [Function],
+            "favorites": undefined,
+            "getData": undefined,
           },
           "ref": null,
           "rendered": null,
@@ -297,7 +383,8 @@ ShallowWrapper {
           "props": Object {
             "category": "Planets",
             "className": "category-button",
-            "getData": [Function],
+            "favorites": undefined,
+            "getData": undefined,
           },
           "ref": null,
           "rendered": null,
@@ -310,7 +397,22 @@ ShallowWrapper {
           "props": Object {
             "category": "Vehicles",
             "className": "category-button",
-            "getData": [Function],
+            "favorites": undefined,
+            "getData": undefined,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "3",
+          "nodeType": "function",
+          "props": Object {
+            "category": "Favorites",
+            "className": "category-button",
+            "favorites": undefined,
+            "getData": undefined,
           },
           "ref": null,
           "rendered": null,

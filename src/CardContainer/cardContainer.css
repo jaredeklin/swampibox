@@ -1,6 +1,6 @@
 .card-container {
-  display: inline-block;
-  border: 1px solid white;
+  display: flex;
+  flex-wrap: wrap;
   width: 100%;
-  min-height: 400px;
+  padding: 50px;
 }

@@ -1,6 +1,10 @@
 import React from 'react';
 import App from './App';
 import { shallow } from 'enzyme';
+// import { mockPeopleData } from '../mockData/mockData';
+// import { fetchPeopleData } from '../helpers/fetchPeopleData';
+
+jest.mock('../helpers/fetchPeopleData');
 
 describe('App', ()=> {
   let wrapper;
@@ -17,25 +21,29 @@ describe('App', ()=> {
     class: "repulsorcraft",
     model: "X-34 landspeeder",
     name: "X-34 landspeeder"
-  }
+  };
 
   beforeEach(() => {
-    wrapper = shallow(<App />)
-  })
+    wrapper = shallow(<App />, {disableLifecycleMethods: true});
+  });
 
   it('should match the snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should start with an empty state', () => {
+  it('should start with expected state', () => {
+
     const expectedState = {
       filmData: [],
       favorites: [],
       peopleData: [],
       vehicleData: [],
       planetData: [],
-      active: []
-    }
+      active: [],
+      opening: true,
+      randomNumber: 0,
+      error: false
+    };
 
     expect(wrapper.state()).toEqual(expectedState);
   });
@@ -61,7 +69,28 @@ describe('App', ()=> {
     expect(wrapper.state('favorites')).toEqual(expectedFavorites);
     wrapper.instance().addToFavorites(card);
     expect(wrapper.state('favorites')).toEqual([]);
-  })
+  });
+
+  it('toggleOpening should toggle the state of opening', () => {
+    expect(wrapper.state('opening')).toEqual(true);
+    wrapper.instance().toggleOpening();
+    expect(wrapper.state('opening')).toEqual(false);
+  });
+  // it('should set peopleData state when the requested data is People', 
+  // async () => {
+  //   expect(wrapper.state('peopleData')).toEqual([]);
+
+  //   // window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+  //   //   ok: true,
+  //   //   json: () => Promise.resolve(mockPeopleData)
+  //   // }));
+
+  //   wrapper.instance().getData('People');
+  //   cleanPeopleData = await fetchPeopleData();
+  //   console.log(cleanPeopleData)
+  //   // expect(fetchPeopleData).toHaveBeenCalled()
+  //   expect(wrapper.state('peopleData').toEqual('string'))
+  // })
 });
 
 

@@ -1,90 +1,127 @@
 import React, { Component } from 'react';
 import './App.css';
 import { CardContainer } from '../CardContainer/CardContainer';
-import { fetchFilmData, cleanFilmData, fetchPeopleData , fetchVehicleData, fetchPlanetData } from '../apiHelper';
+import { 
+  fetchFilmData,  
+  fetchVehicleData, 
+  fetchPlanetData 
+} from '../helpers/apiHelper';
 import { Opening } from '../Opening/Opening';
 import { ButtonContainer } from '../ButtonContainer/ButtonContainer';
+import { fetchPeopleData } from '../helpers/fetchPeopleData';
+
 
 class App extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
       filmData: [],
       favorites: [],
       peopleData: [],
       vehicleData: [],
       planetData: [],
-      active: []
-    }
+      active: [],
+      opening: true,
+      randomNumber: 0,
+      error: false
+    };
   }
 
   getData = (type) => {
-    this.addToActive(type)
+    this.addToActive(type);
     if (type === 'People') {
       fetchPeopleData()
         .then(peopleData => this.setState({ peopleData }))
+        .catch(error => this.setState({ error: true }));
     }
 
     if (type === 'Vehicles') {
       fetchVehicleData()
         .then(vehicleData => this.setState({ vehicleData }))
+        .catch(error => this.setState({ error: true }));
     }
 
-    if (type === 'Planets')
+    if (type === 'Planets') {
       fetchPlanetData()
         .then(planetData => this.setState({ planetData }))
-  }
+        .catch(error => this.setState({ error: true }));
+    }
+  };
 
   addToActive = (type) => {
-    const activeCard = [...this.state.active]
+    const activeCard = [...this.state.active];
     if (activeCard.length >= 1 && activeCard[0] !== type) {
-      activeCard.splice(0, 1, type)
+      activeCard.splice(0, 1, type);
     } else if (activeCard[0] !== type){
-      activeCard.push(type)
+      activeCard.push(type);
     }
-    this.setState({ active: activeCard })
+    this.setState({ active: activeCard });
+  };
+
+  addToFavorites = (cardProps) => {
+
+    let favorites = [...this.state.favorites];
+
+    if (favorites.includes(cardProps)) {
+      favorites = favorites.filter(card => card !== cardProps);
+    } else {
+      favorites.push(cardProps);
+    }
+
+    this.setState({ favorites });
   }
 
-
-  addToFavorites = (cardProps, event) => {
-
-    var updateFavorite = [...this.state.favorites];
-
-    if( updateFavorite.length === 0 ) {
-      updateFavorite.push(cardProps)
-    } else {
-      const match = updateFavorite.find(card => card.name === cardProps.name)
-
-      if(match) {
-        updateFavorite = updateFavorite.filter(card => card.name !== cardProps.name)
-      } else {
-        updateFavorite.push(cardProps);
-      }
-    }
-
-    this.setState({ favorites: updateFavorite})
+  toggleOpening = () => {
+    this.setState({opening: !this.state.opening});
   }
 
   componentDidMount() {
-    
+    this.setState({
+      randomNumber: Math.floor(Math.random() * 6)
+    });
+
+    fetchFilmData()
+      .then(filmData => this.setState({ filmData }))
+      .catch(error => this.setState({ error: true }));
   }
 
   render() {
     return (
       <div className="App">
-        <Opening filmData={this.state.filmData} />
-        <header className="App-header">
-          <h1 className="App-title">SWAMPIbox</h1>
-          <button onClick={() => this.addToActive('Favorites')} className="view-favorites-btn">favorites {this.state.favorites.length}</button>
-        </header>
-        
-        <ButtonContainer getData={this.getData} active={this.state.active}/>
+        {
+          this.state.error && 
+            <h2 className='error'>
+              Oh snaps! Something went wrong...........
+            </h2>
+        }
         { 
-          this.state.active.length === 1 &&
-            <CardContainer 
-              addToFavorites={this.addToFavorites} 
-              allData={this.state}
-            /> 
+          this.state.opening && !this.state.error &&
+          <Opening 
+            filmData={this.state.filmData} 
+            toggleOpening={this.toggleOpening} 
+            randomNumber={this.state.randomNumber}
+          />
+        }
+        { 
+          !this.state.opening && !this.state.error &&
+          <div>
+            <header>
+              <h1>War of Stars</h1>
+            </header>
+          
+            <ButtonContainer 
+              getData={this.getData} 
+              active={this.state.active} 
+              favorites={this.state.favorites.length}
+            />
+            { 
+              this.state.active.length === 1 &&
+              <CardContainer 
+                addToFavorites={this.addToFavorites} 
+                allData={this.state}
+              /> 
+            }
+          </div>
         }
       </div>
     );

@@ -1,26 +1,31 @@
 import React from 'react';
 import './opening.css';
+import PropTypes from 'prop-types';
 
-export const Opening = ({filmData}) => {
-  if( filmData.length > 0 ) {
-    // console.log(filmData)
-    var randomNum = Math.floor(Math.random() * (filmData.length));
-  }
 
-  // setTimeout(() => {
-  //   console.log('timeout')
-
-  // }, 10000)
+export const Opening = ({filmData, toggleOpening, randomNumber}) => {
 
   return (
-    <div className='opening-container'>
-      {randomNum && 
-        <div className='opening-crawl'>   
-          <p>{filmData[randomNum].openingCrawl}</p>
-          <p>{filmData[randomNum].title}</p>
-          <p>{filmData[randomNum].release}</p>
+    <div className='overview'>
+      {filmData.length > 0 && 
+        <div className='opening-container'>
+          <button 
+            className="opening-button" 
+            onClick={toggleOpening}>Enter the War of Stars
+          </button>
+          <div className='crawl'>   
+            <p>{filmData[randomNumber].openingCrawl}</p>
+            <p className='title'>{filmData[randomNumber].title}</p>
+            <p className='year'>{filmData[randomNumber].release}</p>
+          </div>
         </div>
       } 
     </div>
-  )
-}
+  );
+};
+
+Opening.propTypes = {
+  filmData: PropTypes.array,
+  toggleOpening: PropTypes.func,
+  randomNumber: PropTypes.number
+};

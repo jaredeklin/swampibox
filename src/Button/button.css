@@ -1,8 +1,17 @@
 .category-button {
-  width: 150px;
-  height: 150px;
+  width: 20%;
+  height: 100px;
+  border: 3px solid #FFFF00;
+  background-color: rgba(0, 0, 0, .5);
+  color: #FFFF00;
+  font-size: 36px;
+}
+
+.category-button:hover {
+  box-shadow: 0px 0px 30px 0px #FFFF00;
+  text-shadow: 0px 0px 5px #FFFF00;
 }
 
 .active {
-  background-color: magenta;
+  box-shadow: 0px 0px 30px 0px #FFFF00;
 }

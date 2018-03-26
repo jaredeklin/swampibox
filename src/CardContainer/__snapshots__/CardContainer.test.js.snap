@@ -59,6 +59,7 @@ ShallowWrapper {
       "children": Array [
         <Unknown
           addToFavorites={undefined}
+          buttonClass="card"
           properties={
                     Object {
                               "capacity": "1",
@@ -79,6 +80,7 @@ ShallowWrapper {
         "nodeType": "function",
         "props": Object {
           "addToFavorites": undefined,
+          "buttonClass": "card",
           "properties": Object {
             "capacity": "1",
             "class": "repulsorcraft",
@@ -102,6 +104,7 @@ ShallowWrapper {
         "children": Array [
           <Unknown
             addToFavorites={undefined}
+            buttonClass="card"
             properties={
                         Object {
                                     "capacity": "1",
@@ -122,6 +125,7 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "addToFavorites": undefined,
+            "buttonClass": "card",
             "properties": Object {
               "capacity": "1",
               "class": "repulsorcraft",

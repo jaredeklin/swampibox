@@ -1,29 +1,72 @@
-.opening-container {
-  height: 100vh;
-  overflow: hidden;
-  display: none;
+.opening-button {
+  position: absolute;
+  margin: 30px;
+  height: 100px;
+  width: 400px;
+  color: #FFFF00;
+  border: 3px solid #FFFF00;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, .5);
+  font-size: 36px;
+  font-weight: bold;
 }
 
-.opening-crawl {
-  display: block;
-  color: yellow;
-  position: relative;
-  top: 50px;
-  width: 400px;
-  height: 100%;
-  margin: 0 auto;
-  line-height: 50px;
+.opening-button:hover {
+  box-shadow: 0px 0px 40px 0px #FFFF00;
+  text-shadow: 0px 0px 20px #FFFF00;
+}
+
+.title,
+.year {
   text-align: center;
-  transform: translateY(100%);
-  animation: crawl 30s linear infinite;
+}
+
+.overview {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.opening-container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 800px;
+  color: #FFFF00;
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-size: 500%;
+  font-weight: 600;
+  letter-spacing: 6px;
+  line-height: 150%;
+  perspective: 400px;
+  text-align: justify;
+}
+
+.crawl {
+  position: relative;
+  top: 9999px;
+  transform-origin: 50% 100%;
+  animation: crawl 60s linear;
+}
+
+.crawl > .title {
+  font-size: 90%;
+  text-align: center;
+}
+
+.crawl > .title h1 {
+  margin: 0 0 100px;
+  text-transform: uppercase;
 }
 
 @keyframes crawl {
   0% {
-    transform: translateY(100%);
+    top: 0;
+    transform: rotateX(45deg) translateY(100%)  translateZ(0);
   }
-
-  100% {
-    transform: translateY(-100%);
+  100% { 
+    top: -6000px;
+    transform: rotateX(60deg) translateZ(-6000px);
   }
 }
+

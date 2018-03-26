@@ -1,7 +1,17 @@
 h1 {
   text-align: center;
+  font-size: 90px;
+  background-position: 90px;
+  color: #FFFF00;
 }
 
-.view-favorites-btn {
+header {
+  background-image: url('./star-gun.gif'), url('./star-gun.gif');
+  background-repeat: no-repeat;
+  background-position: 5%, 95%;
+}
 
+.error {
+  text-align: center;
+  margin-top: 30%;
 }
