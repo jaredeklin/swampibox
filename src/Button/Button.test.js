@@ -7,4 +7,10 @@ describe('Button', () => {
     const wrapper = shallow(<Button />);
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('should match the snapshot if active', () => {
+    const mockCategory = 'Favorites';
+    const wrapper = shallow(<Button category={mockCategory}/>);
+    expect(wrapper).toMatchSnapshot();
+  });
 });

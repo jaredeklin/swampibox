@@ -55,7 +55,7 @@ ShallowWrapper {
                 className="opening-button"
                 onClick={undefined}
         >
-                Enter the SwapiBox
+                Enter the War of Stars
         </button>
         <div
                 className="crawl"
@@ -108,7 +108,7 @@ ShallowWrapper {
             className="opening-button"
             onClick={undefined}
 >
-            Enter the SwapiBox
+            Enter the War of Stars
 </button>,
           <div
             className="crawl"
@@ -157,12 +157,12 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Enter the SwapiBox",
+            "children": "Enter the War of Stars",
             "className": "opening-button",
             "onClick": undefined,
           },
           "ref": null,
-          "rendered": "Enter the SwapiBox",
+          "rendered": "Enter the War of Stars",
           "type": "button",
         },
         Object {
@@ -305,7 +305,7 @@ freedom to the galaxy....",
                     className="opening-button"
                     onClick={undefined}
           >
-                    Enter the SwapiBox
+                    Enter the War of Stars
           </button>
           <div
                     className="crawl"
@@ -358,7 +358,7 @@ freedom to the galaxy....",
               className="opening-button"
               onClick={undefined}
 >
-              Enter the SwapiBox
+              Enter the War of Stars
 </button>,
             <div
               className="crawl"
@@ -407,12 +407,12 @@ freedom to the galaxy....",
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Enter the SwapiBox",
+              "children": "Enter the War of Stars",
               "className": "opening-button",
               "onClick": undefined,
             },
             "ref": null,
-            "rendered": "Enter the SwapiBox",
+            "rendered": "Enter the War of Stars",
             "type": "button",
           },
           Object {
