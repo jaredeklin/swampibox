@@ -7,6 +7,7 @@ export const fetchHomeWorldData = (peopleData) => {
     return fetch(character.homeworld)
       .then(response => response.json())
       .then(homeWorldData => cleanHomeWorldData(homeWorldData, character))
+      .catch(error => console.log('error'))
   })
   return Promise.all(promises)
 }

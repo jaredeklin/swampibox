@@ -70,14 +70,6 @@ class App extends Component {
     this.setState({opening: !this.state.opening});
   }
 
-  // handleError = () => {
-  //   return (
-  //     <div>
-  //       <h2>Oh snaps! Something went wrong...........</h2>
-  //     </div>
-  //   )
-  // }
-
   componentDidMount() {
     this.setState({
       randomNumber: Math.floor(Math.random() * 6)

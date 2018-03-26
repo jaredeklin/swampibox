@@ -15,12 +15,10 @@ export const Card = ({properties, addToFavorites, buttonClass}) => {
   })
 
   return (
-    <div className='card'>
-      <h2>{properties.name}</h2>
-      <button onClick={() => addToFavorites(properties)} className={buttonClass}></button>
-      <ul>
-        {displayCards}
-      </ul>
+    <div className={buttonClass}>
+      <h2>{properties.name}</h2>   
+        {displayCards}  
+      <button onClick={() => addToFavorites(properties)} className='card-button'></button>
     </div>
   ) 
 }

@@ -3,7 +3,7 @@ export const cleanPlanetData = (planetData) => {
     const planetObj = {
       name: planet.name,
       terrain: planet.terrain,
-      pop: planet.population,
+      population: planet.population,
       climate: planet.climate,
       residents: planet.residents
     }

@@ -7,4 +7,5 @@ export const fetchPeopleData = () => {
     .then(response => response.json())
     .then(peoplesData => fetchHomeWorldData(peoplesData.results))
     .then(updatedData => fetchSpecies(updatedData)) 
+    .catch(error => console.log('error'))
 }

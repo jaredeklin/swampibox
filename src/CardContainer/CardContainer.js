@@ -28,11 +28,11 @@ export const CardContainer = ({ allData, addToFavorites }) => {
   }
 
   const cards = cardsToRender.map((person, index) => {
-    let addClass = 'card-button';
+    let addClass = 'card';
 
     allData.favorites.forEach(favorite => {
       if(favorite.name === person.name) {
-        addClass = 'card-button active'
+        addClass = 'card active'
       }
     })
 

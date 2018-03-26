@@ -1,10 +1,10 @@
-// import { fetchSpecies } from './fetchSpecies';
-// import { fetchHomeWorldData } from './fetchHomeWorldData';
+import { fetchSpecies } from './fetchSpecies';
+import { fetchHomeWorldData } from './fetchHomeWorldData';
 import { shallow } from 'enzyme';
-import { mockPeopleData } from '../mockData/mockData';
-import { fetchPeopleData } from './fetchPeopleData'
-
-// const rootUrl = 'https://swapi.co/api/';
+import { mockPeopleData, expectedCleanHomeWorld } from '../mockData/mockData';
+import { fetchPeopleData } from './fetchPeopleData';   
+jest.mock('./fetchHomeWorldData');
+jest.mock('./fetchSpecies');
 
 describe('fetchPeopleData', () => {
   let url;
@@ -24,12 +24,24 @@ describe('fetchPeopleData', () => {
     expect(window.fetch).toHaveBeenCalledWith(url);
   });
 
-  it.skip('should call fetchHomeworldData with correct params', () => {
+  it('should throw an error if fetch fails', async () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      ok: true,
+      json: () => Promise.reject(mockPeopleData)
+    }));
 
+    url = 'https://swapi.co/api/peop'; 
+    cleanPeople = await fetchPeopleData();
+
+
+  })
+
+  it('should call fetchHomeworldData with correct params', () => {
+    expect(fetchHomeWorldData).toHaveBeenCalledWith(mockPeopleData.results)
   });   
 
-  it.skip('should call fetchSpecies with correct params', () => {
-
+  it('should call fetchSpecies with correct params', () => {
+    expect(fetchSpecies).toHaveBeenCalledWith(expectedCleanHomeWorld)
   });
 });
 

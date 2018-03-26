@@ -81,32 +81,7 @@ describe('fetchFilmData', () => {
   })
 });
 
-// describe('fetchPeopleData', () => {
-//   let url;
-//   let cleanPeople;
 
-//   beforeEach( async () => {
-//     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-//       ok: true,
-//       json: () => Promise.resolve(mockPeopleData)
-//     }));
-
-//     url = 'https://swapi.co/api/people/'; 
-//     cleanPeople = await fetchPeopleData();
-//   })
-
-//   it.skip('fetch should be called with correct params', () => {
-//     expect(window.fetch).toHaveBeenCalledWith(url);
-//   });
-
-//   it.skip('should call fetchHomeworldData with correct params', () => {
-
-//   });   
-
-//   it.skip('should call fetchSpecies with correct params', () => {
-
-//   });
-// });
 
 describe('fetchHomeworldData', () => {
   let url;

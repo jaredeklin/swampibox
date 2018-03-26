@@ -3,6 +3,6 @@ export const cleanHomeWorldData = (homeWorldData, character) => {
     name: character.name,
     species: character.species, 
     homeworld: homeWorldData.name, 
-    pop: homeWorldData.population
+    population: homeWorldData.population
   }
 }

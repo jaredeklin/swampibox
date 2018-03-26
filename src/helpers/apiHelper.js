@@ -9,42 +9,16 @@ export const fetchFilmData = () => {
   return fetch(`${rootUrl}films/`)
     .then(response => response.json())
     .then(filmData => cleanFilmData(filmData))
+    .catch(error => console.log('error')) 
 }
-
-// export const fetchPeopleData = () => {
-//   return fetch(`${rootUrl}people/`)
-//     .then(response => response.json())
-//     .then(peoplesData => fetchHomeWorldData(peoplesData.results))
-//     .then(updatedData => fetchSpecies(updatedData))  }
-
-// export const fetchHomeWorldData = (peopleData) => {
-
-//   const promises = peopleData.map(character => {
-
-//     return fetch(character.homeworld)
-//       .then(response => response.json())
-//       .then(homeWorldData => cleanHomeWorldData(homeWorldData, character))
-//   })
-//   return Promise.all(promises)
-// }
-
-// export const fetchSpecies = (updatedData) => {
-//   const promises = updatedData.map((character) => {
-
-//     return fetch(character.species)
-//      .then(response => response.json())
-//      .then(speciesData => ({...character, species: speciesData.name}))
-//   })
-
-//   return Promise.all(promises)
-// }
 
 export const fetchPlanetData = () => {
 
   return fetch(`${rootUrl}planets/`)
     .then(response => response.json())
     .then(planetData => cleanPlanetData(planetData))
-    .then(updatedData => fetchResidents(updatedData))   
+    .then(updatedData => fetchResidents(updatedData))
+    .catch(error => console.log('error'))   
 }
 
 export const fetchResidents = (planetData) => {
@@ -56,10 +30,12 @@ export const fetchResidents = (planetData) => {
       return fetch(resident)
         .then(response => response.json())
         .then(residentData => residentData.name)
+        .catch(error => console.log('error'))
     })
     
     return Promise.all(inhabitants)
       .then(residentNames => ({...planet, residents: residentNames.join(', ')}))
+      .catch(error => console.log('error'))
   })
 
   return Promise.all(promises)
@@ -70,6 +46,7 @@ export const fetchVehicleData = () => {
   return fetch(`${rootUrl}vehicles/`)
     .then(response => response.json())
     .then(vehicleData => cleanVehicleData(vehicleData))
+    .catch(error => console.log('error'))
 }
 
 

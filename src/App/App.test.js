@@ -2,6 +2,7 @@ import React from 'react';
 import App from './App';
 import { shallow } from 'enzyme';
 import { mockPeopleData } from '../mockData/mockData';
+import { fetchPeopleData } from '../helpers/fetchPeopleData';
 
 jest.mock('../helpers/fetchPeopleData')
 
@@ -76,18 +77,20 @@ describe('App', ()=> {
     expect(wrapper.state('opening')).toEqual(false);
   })
 
-  it('should set peopleData state when the requested data is People', () => {
-    expect(wrapper.state('peopleData')).toEqual([]);
+  // it('should set peopleData state when the requested data is People', async () => {
+  //   expect(wrapper.state('peopleData')).toEqual([]);
 
-    // window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-    //   ok: true,
-    //   json: () => Promise.resolve(mockPeopleData)
-    // }));
+  //   // window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+  //   //   ok: true,
+  //   //   json: () => Promise.resolve(mockPeopleData)
+  //   // }));
 
-    // wrapper.instance().getData('People');
-    // cleanPeopleData = await fetchPeopleData();
-    // expect(fetchPeopleData()).resolves.toEqual([])
-  })
+  //   wrapper.instance().getData('People');
+  //   cleanPeopleData = await fetchPeopleData();
+  //   console.log(cleanPeopleData)
+  //   // expect(fetchPeopleData).toHaveBeenCalled()
+  //   expect(wrapper.state('peopleData').toEqual('string'))
+  // })
 });
 
 
