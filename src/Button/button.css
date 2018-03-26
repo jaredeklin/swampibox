@@ -1,24 +1,17 @@
 .category-button {
   width: 20%;
   height: 100px;
-  border: 3px solid #FEDA4A;
+  border: 3px solid #FFFF00;
   background-color: rgba(0, 0, 0, .5);
-  color: #FEDA4A;
+  color: #FFFF00;
   font-size: 36px;
 }
 
 .category-button:hover {
-  box-shadow: 0px 0px 30px 0px #FEDA4A;
-  text-shadow: 0px 0px 5px #FEDA4A;
+  box-shadow: 0px 0px 30px 0px #FFFF00;
+  text-shadow: 0px 0px 5px #FFFF00;
 }
 
 .active {
-  box-shadow: 0px 0px 30px 0px #FEDA4A;
+  box-shadow: 0px 0px 30px 0px #FFFF00;
 }
-
-/*.category-button span {
-  width: 20px;
-  background-image: url('./star.svg');
-  background-size: 30px;
-  background-repeat: no-repeat;
-}*/

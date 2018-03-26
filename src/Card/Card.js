@@ -18,7 +18,7 @@ export const Card = ({properties, addToFavorites, buttonClass}) => {
     <div className={buttonClass}>
       <h2>{properties.name}</h2>   
         {displayCards}  
-      <button onClick={() => addToFavorites(properties)} className='card-button'></button>
+      <button onClick={() => addToFavorites(properties)} className='card-button'>Favorite</button>
     </div>
   ) 
 }

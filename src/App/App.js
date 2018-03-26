@@ -87,10 +87,12 @@ class App extends Component {
           this.state.error && 
             <h2 className='error'>Oh snaps! Something went wrong...........</h2>
         }
-        { this.state.opening && !this.state.error &&
+        { 
+          this.state.opening && !this.state.error &&
           <Opening filmData={this.state.filmData} toggleOpening={this.toggleOpening} randomNumber={this.state.randomNumber}/>
         }
-        { !this.state.opening && !this.state.error &&
+        { 
+          !this.state.opening && !this.state.error &&
           <div>
           <header>
             <h1>SWAPIbox</h1>

@@ -1,6 +1,14 @@
 h1 {
   text-align: center;
   font-size: 90px;
+  background-position: 90px;
+  color: #FFFF00;
+}
+
+header {
+  background-image: url('./star-gun.gif'), url('./star-gun.gif');
+  background-repeat: no-repeat;
+  background-position: 5%, 95%;
 }
 
 .error {
