@@ -1,35 +1,23 @@
 import {
   fetchFilmData,
-  fetchPlanetData,
-  fetchVehicleData,
+  fetchVehicleData
 } from './apiHelper';
-
 import { cleanVehicleData } from './cleanVehicleData';
 import { cleanFilmData } from './cleanFilmData';
 import { cleanHomeWorldData } from './cleanHomeWorldData';
-
-import { fetchPeopleData } from './fetchPeopleData';
 import { fetchHomeWorldData } from './fetchHomeWorldData';
 import { fetchSpecies } from './fetchSpecies';
-import { fetchResidents } from './fetchResidents'
+import { fetchResidents } from './fetchResidents';
 
 import { 
   mockVehicleData, 
-  finalVehicleData,
   mockFilmData,
-  expectedFilmData,
   mockPersonData,
   mockPlanetData,
-  expectedCleanHomeWorld,
-  mockPeopleData,
-  mockAllPlanetData,
-  expectedCleanPlanetData,
   mockGetHomeWorldData,
-  mockCharacterDataObj,
   mockCharacterDataArray,
-  mockHomeWorld,
-  mockResidentData,
-  } from '../mockData/mockData'
+  mockResidentData
+} from '../mockData/mockData';
 
 jest.mock('./cleanVehicleData');
 jest.mock('./cleanFilmData');
@@ -47,15 +35,15 @@ describe('fetchVehicleData', () => {
 
     url = 'https://swapi.co/api/vehicles/'; 
     cleanVehicle = await fetchVehicleData();
-  })
+  });
 
   it('fetch should be called with correct params', () => {
-    expect(window.fetch).toHaveBeenCalledWith(url)
+    expect(window.fetch).toHaveBeenCalledWith(url);
   });
 
   it('cleanVehicleData should be called with correct params', () => {
-    expect(cleanVehicleData).toHaveBeenCalledWith(mockVehicleData)
-  })
+    expect(cleanVehicleData).toHaveBeenCalledWith(mockVehicleData);
+  });
 });
 
 describe('fetchFilmData', () => {
@@ -70,15 +58,15 @@ describe('fetchFilmData', () => {
 
     url = 'https://swapi.co/api/films/'; 
     cleanFilm = await fetchFilmData();
-  })
+  });
 
   it('fetch should be called with correct params', () => {
-    expect(window.fetch).toHaveBeenCalledWith(url)
+    expect(window.fetch).toHaveBeenCalledWith(url);
   });
 
   it('should call cleanFilmData with correct params', () => {
-    expect(cleanFilmData).toHaveBeenCalledWith(mockFilmData)
-  })
+    expect(cleanFilmData).toHaveBeenCalledWith(mockFilmData);
+  });
 });
 
 
@@ -95,15 +83,16 @@ describe('fetchHomeworldData', () => {
 
     url = 'https://swapi.co/api/planets/1/';
     cleanHomeWorld = await fetchHomeWorldData(mockGetHomeWorldData);
-  })
+  });
 
   it('fetch should be called with correct params', () => {
     expect(window.fetch).toHaveBeenCalledWith(url);
   });
 
   it('cleanHomeWorldData should be called with correct params', () => {
-    expect(cleanHomeWorldData).toHaveBeenCalledWith(mockPlanetData, mockPersonData);
-  })
+    expect(cleanHomeWorldData)
+      .toHaveBeenCalledWith(mockPlanetData, mockPersonData);
+  });
 });
 
 
@@ -118,11 +107,11 @@ describe('fetchSpecies', () => {
     }));
 
     url = ['https://swapi.co/api/species/1/']; 
-    cleanSpecies = await fetchSpecies(mockCharacterDataArray)
-  })
+    cleanSpecies = await fetchSpecies(mockCharacterDataArray);
+  });
 
   it('fetch should be called with correct params', () => {
-    expect(window.fetch).toHaveBeenCalledWith(url)
+    expect(window.fetch).toHaveBeenCalledWith(url);
   });
 });
 
@@ -157,12 +146,12 @@ describe('fetchResidents', () => {
 
     url = 'https://swapi.co/api/people/1/'; 
     cleanResidents = await fetchResidents([mockPlanetData]);
-  })
+  });
 
   it('fetch should be called with correct params', () => {
-    expect(window.fetch).toHaveBeenCalledWith(url)
+    expect(window.fetch).toHaveBeenCalledWith(url);
   });
-})
+});
 
 
 

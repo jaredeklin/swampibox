@@ -16,14 +16,14 @@ describe('CardContainer', () => {
     }],
     planetData: [],
     active: ['Vehicles']
-  }
+  };
 
   it('should match the snapshot', () => {
     let wrapper = shallow(
       <CardContainer 
         allData={mockAllData}
         props={mockAllData}
-      />)
-    expect(wrapper).toMatchSnapshot()
-  })
-})
+      />);
+    expect(wrapper).toMatchSnapshot();
+  });
+});

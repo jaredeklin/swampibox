@@ -3,14 +3,14 @@ import './button.css';
 import PropTypes from 'prop-types';
 
 export const Button = ({category, getData, className, favorites}) => {
-  if(category === 'Favorites') {
+  if (category === 'Favorites') {
     return (
       <button 
         className={className}
         onClick={() => getData(category)}
         value={category}
       >{category}: <span>{favorites}</span></button>
-    )
+    );
 
   } else {
     return (
@@ -19,14 +19,16 @@ export const Button = ({category, getData, className, favorites}) => {
         onClick={() => getData(category)}
         value={category}
       >{category}</button>
-    )
+    );
   }
-}
+};
 
 
 Button.propTypes = {
   category: PropTypes.string,
-  getData: PropTypes.func
-}
+  getData: PropTypes.func,
+  className: PropTypes.string,
+  favorites: PropTypes.number
+};
 
 export default Button;

@@ -1,4 +1,4 @@
-import { cleanHomeWorldData } from './cleanHomeWorldData'
+import { cleanHomeWorldData } from './cleanHomeWorldData';
 
 export const fetchHomeWorldData = (peopleData) => {
 
@@ -6,8 +6,7 @@ export const fetchHomeWorldData = (peopleData) => {
 
     return fetch(character.homeworld)
       .then(response => response.json())
-      .then(homeWorldData => cleanHomeWorldData(homeWorldData, character))
-      .catch(error => console.log('error'))
-  })
-  return Promise.all(promises)
-}
+      .then(homeWorldData => cleanHomeWorldData(homeWorldData, character));
+  });
+  return Promise.all(promises);
+};

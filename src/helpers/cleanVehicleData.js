@@ -5,7 +5,7 @@ export const cleanVehicleData = (vehicleData) => {
       model: vehicle.model,
       class: vehicle.vehicle_class,
       capacity: vehicle.passengers
-    }
-    return [...vehicleArray, vehicleObj]
-  }, [])
-}
+    };
+    return [...vehicleArray, vehicleObj];
+  }, []);
+};

@@ -6,8 +6,8 @@ export const cleanPlanetData = (planetData) => {
       population: planet.population,
       climate: planet.climate,
       residents: planet.residents
-    }
+    };
 
-    return [...planetArray, planetObj]
-  }, [])    
-}
+    return [...planetArray, planetObj];
+  }, []);
+};

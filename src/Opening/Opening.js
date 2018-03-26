@@ -1,5 +1,6 @@
 import React from 'react';
 import './opening.css';
+import PropTypes from 'prop-types';
 
 
 export const Opening = ({filmData, toggleOpening, randomNumber}) => {
@@ -8,7 +9,10 @@ export const Opening = ({filmData, toggleOpening, randomNumber}) => {
     <div className='overview'>
       {filmData.length > 0 && 
         <div className='opening-container'>
-          <button className="opening-button" onClick={toggleOpening}>Enter the SwapiBox</button>
+          <button 
+            className="opening-button" 
+            onClick={toggleOpening}>Enter the SwapiBox
+          </button>
           <div className='crawl'>   
             <p>{filmData[randomNumber].openingCrawl}</p>
             <p className='title'>{filmData[randomNumber].title}</p>
@@ -17,5 +21,11 @@ export const Opening = ({filmData, toggleOpening, randomNumber}) => {
         </div>
       } 
     </div>
-  )
-}
+  );
+};
+
+Opening.propTypes = {
+  filmData: PropTypes.array,
+  toggleOpening: PropTypes.func,
+  randomNumber: PropTypes.number
+};

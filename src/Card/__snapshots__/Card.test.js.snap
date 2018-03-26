@@ -31,41 +31,43 @@ ShallowWrapper {
         <h2>
           X-34 landspeeder
 </h2>,
+        Array [
+          <li>
+            <span
+                        className="card-keys"
+            >
+                        capacity
+            </span>
+            : 
+            1
+</li>,
+          <li>
+            <span
+                        className="card-keys"
+            >
+                        class
+            </span>
+            : 
+            repulsorcraft
+</li>,
+          <li>
+            <span
+                        className="card-keys"
+            >
+                        model
+            </span>
+            : 
+            X-34 landspeeder
+</li>,
+        ],
         <button
-          className={undefined}
+          className="card-button"
           onClick={[Function]}
-/>,
-        <ul>
-          <li>
-                    <span
-                              className="card-keys"
-                    >
-                              capacity
-                    </span>
-                    : 
-                    1
-          </li>
-          <li>
-                    <span
-                              className="card-keys"
-                    >
-                              class
-                    </span>
-                    : 
-                    repulsorcraft
-          </li>
-          <li>
-                    <span
-                              className="card-keys"
-                    >
-                              model
-                    </span>
-                    : 
-                    X-34 landspeeder
-          </li>
-</ul>,
+>
+          Favorite
+</button>,
       ],
-      "className": "card",
+      "className": undefined,
     },
     "ref": null,
     "rendered": Array [
@@ -82,22 +84,133 @@ ShallowWrapper {
       },
       Object {
         "instance": null,
-        "key": undefined,
+        "key": "0",
         "nodeType": "host",
         "props": Object {
-          "className": undefined,
-          "onClick": [Function],
+          "children": Array [
+            <span
+              className="card-keys"
+>
+              capacity
+</span>,
+            ": ",
+            "1",
+          ],
         },
         "ref": null,
-        "rendered": null,
-        "type": "button",
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "capacity",
+              "className": "card-keys",
+            },
+            "ref": null,
+            "rendered": "capacity",
+            "type": "span",
+          },
+          ": ",
+          "1",
+        ],
+        "type": "li",
+      },
+      Object {
+        "instance": null,
+        "key": "1",
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <span
+              className="card-keys"
+>
+              class
+</span>,
+            ": ",
+            "repulsorcraft",
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "class",
+              "className": "card-keys",
+            },
+            "ref": null,
+            "rendered": "class",
+            "type": "span",
+          },
+          ": ",
+          "repulsorcraft",
+        ],
+        "type": "li",
+      },
+      Object {
+        "instance": null,
+        "key": "2",
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <span
+              className="card-keys"
+>
+              model
+</span>,
+            ": ",
+            "X-34 landspeeder",
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "model",
+              "className": "card-keys",
+            },
+            "ref": null,
+            "rendered": "model",
+            "type": "span",
+          },
+          ": ",
+          "X-34 landspeeder",
+        ],
+        "type": "li",
       },
       Object {
         "instance": null,
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": Array [
+          "children": "Favorite",
+          "className": "card-button",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "Favorite",
+        "type": "button",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h2>
+            X-34 landspeeder
+</h2>,
+          Array [
             <li>
               <span
                             className="card-keys"
@@ -126,162 +239,14 @@ ShallowWrapper {
               X-34 landspeeder
 </li>,
           ],
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": "0",
-            "nodeType": "host",
-            "props": Object {
-              "children": Array [
-                <span
-                  className="card-keys"
->
-                  capacity
-</span>,
-                ": ",
-                "1",
-              ],
-            },
-            "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "capacity",
-                  "className": "card-keys",
-                },
-                "ref": null,
-                "rendered": "capacity",
-                "type": "span",
-              },
-              ": ",
-              "1",
-            ],
-            "type": "li",
-          },
-          Object {
-            "instance": null,
-            "key": "1",
-            "nodeType": "host",
-            "props": Object {
-              "children": Array [
-                <span
-                  className="card-keys"
->
-                  class
-</span>,
-                ": ",
-                "repulsorcraft",
-              ],
-            },
-            "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "class",
-                  "className": "card-keys",
-                },
-                "ref": null,
-                "rendered": "class",
-                "type": "span",
-              },
-              ": ",
-              "repulsorcraft",
-            ],
-            "type": "li",
-          },
-          Object {
-            "instance": null,
-            "key": "2",
-            "nodeType": "host",
-            "props": Object {
-              "children": Array [
-                <span
-                  className="card-keys"
->
-                  model
-</span>,
-                ": ",
-                "X-34 landspeeder",
-              ],
-            },
-            "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "model",
-                  "className": "card-keys",
-                },
-                "ref": null,
-                "rendered": "model",
-                "type": "span",
-              },
-              ": ",
-              "X-34 landspeeder",
-            ],
-            "type": "li",
-          },
-        ],
-        "type": "ul",
-      },
-    ],
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": Array [
-          <h2>
-            X-34 landspeeder
-</h2>,
           <button
-            className={undefined}
+            className="card-button"
             onClick={[Function]}
-/>,
-          <ul>
-            <li>
-                        <span
-                                    className="card-keys"
-                        >
-                                    capacity
-                        </span>
-                        : 
-                        1
-            </li>
-            <li>
-                        <span
-                                    className="card-keys"
-                        >
-                                    class
-                        </span>
-                        : 
-                        repulsorcraft
-            </li>
-            <li>
-                        <span
-                                    className="card-keys"
-                        >
-                                    model
-                        </span>
-                        : 
-                        X-34 landspeeder
-            </li>
-</ul>,
+>
+            Favorite
+</button>,
         ],
-        "className": "card",
+        "className": undefined,
       },
       "ref": null,
       "rendered": Array [
@@ -298,157 +263,118 @@ ShallowWrapper {
         },
         Object {
           "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "className": undefined,
-            "onClick": [Function],
-          },
-          "ref": null,
-          "rendered": null,
-          "type": "button",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
+          "key": "0",
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              <li>
-                <span
-                                className="card-keys"
-                >
-                                capacity
-                </span>
-                : 
-                1
-</li>,
-              <li>
-                <span
-                                className="card-keys"
-                >
-                                class
-                </span>
-                : 
-                repulsorcraft
-</li>,
-              <li>
-                <span
-                                className="card-keys"
-                >
-                                model
-                </span>
-                : 
-                X-34 landspeeder
-</li>,
+              <span
+                className="card-keys"
+>
+                capacity
+</span>,
+              ": ",
+              "1",
             ],
           },
           "ref": null,
           "rendered": Array [
             Object {
               "instance": null,
-              "key": "0",
+              "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": Array [
-                  <span
-                    className="card-keys"
->
-                    capacity
-</span>,
-                  ": ",
-                  "1",
-                ],
+                "children": "capacity",
+                "className": "card-keys",
               },
               "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "capacity",
-                    "className": "card-keys",
-                  },
-                  "ref": null,
-                  "rendered": "capacity",
-                  "type": "span",
-                },
-                ": ",
-                "1",
-              ],
-              "type": "li",
+              "rendered": "capacity",
+              "type": "span",
             },
-            Object {
-              "instance": null,
-              "key": "1",
-              "nodeType": "host",
-              "props": Object {
-                "children": Array [
-                  <span
-                    className="card-keys"
->
-                    class
-</span>,
-                  ": ",
-                  "repulsorcraft",
-                ],
-              },
-              "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "class",
-                    "className": "card-keys",
-                  },
-                  "ref": null,
-                  "rendered": "class",
-                  "type": "span",
-                },
-                ": ",
-                "repulsorcraft",
-              ],
-              "type": "li",
-            },
-            Object {
-              "instance": null,
-              "key": "2",
-              "nodeType": "host",
-              "props": Object {
-                "children": Array [
-                  <span
-                    className="card-keys"
->
-                    model
-</span>,
-                  ": ",
-                  "X-34 landspeeder",
-                ],
-              },
-              "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "model",
-                    "className": "card-keys",
-                  },
-                  "ref": null,
-                  "rendered": "model",
-                  "type": "span",
-                },
-                ": ",
-                "X-34 landspeeder",
-              ],
-              "type": "li",
-            },
+            ": ",
+            "1",
           ],
-          "type": "ul",
+          "type": "li",
+        },
+        Object {
+          "instance": null,
+          "key": "1",
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <span
+                className="card-keys"
+>
+                class
+</span>,
+              ": ",
+              "repulsorcraft",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "class",
+                "className": "card-keys",
+              },
+              "ref": null,
+              "rendered": "class",
+              "type": "span",
+            },
+            ": ",
+            "repulsorcraft",
+          ],
+          "type": "li",
+        },
+        Object {
+          "instance": null,
+          "key": "2",
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <span
+                className="card-keys"
+>
+                model
+</span>,
+              ": ",
+              "X-34 landspeeder",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "model",
+                "className": "card-keys",
+              },
+              "ref": null,
+              "rendered": "model",
+              "type": "span",
+            },
+            ": ",
+            "X-34 landspeeder",
+          ],
+          "type": "li",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Favorite",
+            "className": "card-button",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "Favorite",
+          "type": "button",
         },
       ],
       "type": "div",

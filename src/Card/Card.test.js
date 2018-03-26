@@ -18,6 +18,6 @@ describe('Card', () => {
         addToFavorites={mockAddToFavorites}
         properties={mockProps}
       />);
-    expect(wrapper).toMatchSnapshot()
-  })
-})
+    expect(wrapper).toMatchSnapshot();
+  });
+});

@@ -251,7 +251,7 @@ export const mockAllPlanetData = {
 export const expectedCleanPlanetData = [{
   "climate": "temperate", 
   "name": "Alderaan", 
-  "pop": "2000000000", 
+  "population": "2000000000", 
   "residents": [
     "https://swapi.co/api/people/5/", 
     "https://swapi.co/api/people/68/", 
@@ -295,21 +295,21 @@ export const mockPersonData = {
 export const expectedCleanHomeWorld = {
   "homeworld": "Tatooine", 
   "name": "Luke Skywalker", 
-  "pop": "200000", 
+  "population": "200000", 
   "species": ["https://swapi.co/api/species/1/"]
 }
 
 export const mockCharacterDataObj = {
   "homeworld": "Tatooine", 
   "name": "Luke Skywalker", 
-  "pop": "200000", 
+  "population": "200000", 
   "species": ["https://swapi.co/api/species/1/"]
 }
 
 export const mockCharacterDataArray = [{
   "homeworld": "Tatooine", 
   "name": "Luke Skywalker", 
-  "pop": "200000", 
+  "population": "200000", 
   "species": ["https://swapi.co/api/species/1/"]
 }];
 
@@ -379,7 +379,7 @@ export const expectedPeopleData = {
   name: "Luke Skywalker", 
   species: "Human", 
   homeworld: "Tatooine", 
-  pop: "200000"
+  population: "200000"
 };
 
 export const mockResidentData = [

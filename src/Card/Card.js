@@ -10,21 +10,24 @@ export const Card = ({properties, addToFavorites, buttonClass}) => {
       return (
         <li key={index}>
           <span className="card-keys">
-          {info}</span>: {properties[info]} 
-        </li>)
-  })
+            {info}</span>: {properties[info]} 
+        </li>);
+    });
 
   return (
     <div className={buttonClass}>
       <h2>{properties.name}</h2>   
-        {displayCards}  
-      <button onClick={() => addToFavorites(properties)} className='card-button'>Favorite</button>
+      {displayCards}  
+      <button 
+        onClick={() => addToFavorites(properties)} 
+        className='card-button'
+      >Favorite</button>
     </div>
-  ) 
-}
+  );
+};
 
 Card.propTypes = {
   properties: PropTypes.object,
   addToFavorites: PropTypes.func,
-  className: PropTypes.string
-}
+  buttonClass: PropTypes.string
+};

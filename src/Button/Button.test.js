@@ -4,7 +4,7 @@ import Button from './Button';
 
 describe('Button', () => {
   it('should match the snapshot', () => {
-    const wrapper = shallow(<Button />)
+    const wrapper = shallow(<Button />);
     expect(wrapper).toMatchSnapshot();
-  })
-})
+  });
+});

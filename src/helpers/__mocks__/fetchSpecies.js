@@ -1,1 +1,1 @@
-export const fetchSpecies = jest.fn()
+export const fetchSpecies = jest.fn();

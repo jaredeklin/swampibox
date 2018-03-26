@@ -4,5 +4,5 @@ export const cleanHomeWorldData = (homeWorldData, character) => {
     species: character.species, 
     homeworld: homeWorldData.name, 
     population: homeWorldData.population
-  }
-}
+  };
+};

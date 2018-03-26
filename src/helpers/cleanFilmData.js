@@ -3,9 +3,9 @@ export const cleanFilmData = (films) => {
     const filmObj = {
       title: episode.title,
       release: episode.release_date.slice(0, 4),
-      openingCrawl: episode.opening_crawl,
-    }
+      openingCrawl: episode.opening_crawl
+    };
 
-    return [...filmData, filmObj]
-  }, [])  
-}
+    return [...filmData, filmObj];
+  }, []);
+};

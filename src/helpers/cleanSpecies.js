@@ -1,4 +1,4 @@
 export const cleanSpecies = (speciesData, character) => {
 
-  return ({...character, species: speciesData.name})
+  return ({...character, species: speciesData.name});
 };

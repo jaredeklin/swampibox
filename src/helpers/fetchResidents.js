@@ -6,12 +6,13 @@ export const fetchResidents = (planetData) => {
 
       return fetch(resident)
         .then(response => response.json())
-        .then(residentData => residentData.name)
-    })
+        .then(residentData => residentData.name);
+    });
     
     return Promise.all(inhabitants)
-      .then(residentNames => ({...planet, residents: residentNames.join(', ')}))
-  })
+      .then(residentNames => (
+        {...planet, residents: residentNames.join(', ')}));
+  });
 
-  return Promise.all(promises)
-}
+  return Promise.all(promises);
+};

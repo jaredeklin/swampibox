@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
 import './App.css';
 import { CardContainer } from '../CardContainer/CardContainer';
-import { fetchFilmData, cleanFilmData, fetchVehicleData, fetchPlanetData } from '../helpers/apiHelper';
+import { 
+  fetchFilmData,  
+  fetchVehicleData, 
+  fetchPlanetData 
+} from '../helpers/apiHelper';
 import { Opening } from '../Opening/Opening';
 import { ButtonContainer } from '../ButtonContainer/ButtonContainer';
-import { fetchPeopleData } from '../helpers/fetchPeopleData'
+import { fetchPeopleData } from '../helpers/fetchPeopleData';
 
 
 class App extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
       filmData: [],
       favorites: [],
@@ -20,7 +24,7 @@ class App extends Component {
       opening: true,
       randomNumber: 0,
       error: false
-    }
+    };
   }
 
   getData = (type) => {
@@ -28,20 +32,21 @@ class App extends Component {
     if (type === 'People') {
       fetchPeopleData()
         .then(peopleData => this.setState({ peopleData }))
-        .catch(error => this.setState({ error: true }))
+        .catch(error => this.setState({ error: true }));
     }
 
     if (type === 'Vehicles') {
       fetchVehicleData()
         .then(vehicleData => this.setState({ vehicleData }))
-        .catch(error => this.setState({ error: true }))
+        .catch(error => this.setState({ error: true }));
     }
 
-    if (type === 'Planets')
+    if (type === 'Planets') {
       fetchPlanetData()
         .then(planetData => this.setState({ planetData }))
-        .catch(error => this.setState({ error: true }))
-  }
+        .catch(error => this.setState({ error: true }));
+    }
+  };
 
   addToActive = (type) => {
     const activeCard = [...this.state.active];
@@ -51,7 +56,7 @@ class App extends Component {
       activeCard.push(type);
     }
     this.setState({ active: activeCard });
-  }
+  };
 
   addToFavorites = (cardProps) => {
 
@@ -73,11 +78,11 @@ class App extends Component {
   componentDidMount() {
     this.setState({
       randomNumber: Math.floor(Math.random() * 6)
-    })
+    });
 
     fetchFilmData()
       .then(filmData => this.setState({ filmData }))
-      .catch(error => this.setState({ error: true }))
+      .catch(error => this.setState({ error: true }));
   }
 
   render() {
@@ -85,27 +90,37 @@ class App extends Component {
       <div className="App">
         {
           this.state.error && 
-            <h2 className='error'>Oh snaps! Something went wrong...........</h2>
+            <h2 className='error'>
+              Oh snaps! Something went wrong...........
+            </h2>
         }
         { 
           this.state.opening && !this.state.error &&
-          <Opening filmData={this.state.filmData} toggleOpening={this.toggleOpening} randomNumber={this.state.randomNumber}/>
+          <Opening 
+            filmData={this.state.filmData} 
+            toggleOpening={this.toggleOpening} 
+            randomNumber={this.state.randomNumber}
+          />
         }
         { 
           !this.state.opening && !this.state.error &&
           <div>
-          <header>
-            <h1>SWAPIbox</h1>
-          </header>
+            <header>
+              <h1>SWAPIbox</h1>
+            </header>
           
-          <ButtonContainer getData={this.getData} active={this.state.active} favorites={this.state.favorites.length}/>
-          { 
-            this.state.active.length === 1 &&
+            <ButtonContainer 
+              getData={this.getData} 
+              active={this.state.active} 
+              favorites={this.state.favorites.length}
+            />
+            { 
+              this.state.active.length === 1 &&
               <CardContainer 
                 addToFavorites={this.addToFavorites} 
                 allData={this.state}
               /> 
-          }
+            }
           </div>
         }
       </div>

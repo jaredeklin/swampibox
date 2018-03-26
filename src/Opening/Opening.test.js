@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { Opening } from './Opening';
-import { expectedFilmData } from '../mockData/mockData'
+import { expectedFilmData } from '../mockData/mockData';
 
 describe('Opening', () => {
   it('should match the snapshot', () => {
@@ -13,5 +13,5 @@ describe('Opening', () => {
       />);
     
     expect(wrapper).toMatchSnapshot();
-  })
-})
+  });
+});
