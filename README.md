@@ -2,7 +2,7 @@
 
 ## Description
 
-This was a solo project done in the 3rd module at Turning School of Software and Design. It was built around pulling data from the Star Wars api, swapi. It's an application that grabs information about the characters, planets and vehicles that I'm told are in the films.  I haven't seen the film's so I decided to style the project as I imagine The War Amongst The Stars to be. The application was built using React. The learning goals of this project were to get comfortable making async api requests, building react components and testing React with mock fetch calls.
+This was a solo project done in the 3rd module at Turing School of Software and Design. It was built around pulling data from the Star Wars api, swapi. It's an application that grabs information about the characters, planets and vehicles that I'm told are in the films.  I haven't seen the film's so I decided to style the project as I imagine The War Amongst The Stars to be. The application was built using React. The learning goals of this project were to get comfortable making async api requests, building react components and testing React with mock fetch calls.
 
 ## Project Contributors
 
